@@ -559,11 +559,174 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-max {
+  height: -webkit-max-content;
+  height: max-content;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
+.min-h-30h {
+  min-height: 30vh;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[150px\] {
+  width: 150px;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
 }
 
-.border-red-500 {
+.border-red-400 {
   --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-placeholder-pattern {
+  background-image: url('/src/images/placeholder.webp');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:min-h-40h {
+    min-height: 40vh;
+  }
+
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
