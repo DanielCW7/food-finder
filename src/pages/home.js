@@ -7,11 +7,16 @@ import Footer from "../components/footer";
 
 const Home = () => {
     return(
-        <div>
-            <Hero />            
-            {/* <Sidebar /> */}
-            <Dashboard />
-            <Footer />
+        <div className="">
+            <div className="fixed">
+                <Sidebar />
+            </div>
+            <div>
+                <Hero />            
+                <Dashboard />
+                <Footer />
+            </div>
+            
         </div>
     )
 }
