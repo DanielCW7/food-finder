@@ -26,7 +26,7 @@ const Sidebar = () => {
                 </div>
             )}
         </div>
-            <div className="fixed hidden md:block w-1/5 border border-green-500">   
+            <div className="fixed hidden md:block w-1/5">   
                 <div className="bg-gray-900 h-screen py-20 flex flex-col" id="nav">
                     <div style={{backgroundImage: `url(${pic})`}} className="border bg-cover rounded-full w-[100px] h-[100px] rounded-100 mx-auto"></div>
                     <ul className="flex flex-col text-white gap-5 p-5 font-extralight text-xl">
