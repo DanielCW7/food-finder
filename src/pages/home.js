@@ -7,16 +7,15 @@ import Footer from "../components/footer";
 
 const Home = () => {
     return(
-        <div className="">
-            <div className="fixed">
-                <Sidebar />
-            </div>
-            <div>
-                <Hero />            
-                <Dashboard />
-                <Footer />
-            </div>
-            
+        <div className="grid md:grid-cols-5">
+                <div className="col-span-1 border border-red-500">
+                    <Sidebar />
+                </div>
+                <div className="col-span-4">
+                    <Hero />
+                    <Dashboard />
+                    <Footer />
+                </div>
         </div>
     )
 }

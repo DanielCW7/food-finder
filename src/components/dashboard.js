@@ -4,10 +4,18 @@ import Card from "../components/card";
 const Dashboard = () => {
     return (
         <div className="p-5 md:p-10">
-            <form className="flex flex-row justify-end">
-                {/* form filtering options here. dropdown box */}
-                <input type="text" placeholder="enter text" className="border p-2"/>
-                <input type="submit" className="border p-2"/>
+            <form className="flex flex-row justify-between">
+                <select id="cars" name="cars" className="border flex flex-grow">
+                    <option value="volvo">Price Low to High</option>
+                    <option value="saab">Price High to Low</option>
+                    <option value="fiat">Alphabetically?</option>
+                    <option value="audi">by genre?</option>
+                </select> 
+                <div>
+                    <input type="text" placeholder="enter text" className="border p-2"/>
+                    <input type="submit" className="border p-2"/>                    
+                </div>               
+
             </form>
             <div className="flex flex-row gap-10 flex-wrap justify-center my-10">
                 <Card />
