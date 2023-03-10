@@ -5,11 +5,10 @@ const Dashboard = () => {
     return (
         <div className="p-5 md:p-10">
             <form className="flex flex-row justify-between">
-                <select id="cars" name="cars" className="border flex flex-grow">
+                <select id="cars" name="cars" className="border flex flex-shrink">
                     <option value="volvo">Price Low to High</option>
                     <option value="saab">Price High to Low</option>
-                    <option value="fiat">Alphabetically?</option>
-                    <option value="audi">by genre?</option>
+                    <option value="fiat">A-Z</option>
                 </select> 
                 <div>
                     <input type="text" placeholder="enter text" className="border p-2"/>

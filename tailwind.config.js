@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'placeholder-pattern': "url('/src/images/placeholder.webp')"
+        'placeholder-pattern': "url('/src/images/bookBackground.jpg')"
       },
       minHeight: {
         '10h': '10vh',
