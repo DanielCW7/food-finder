@@ -1,35 +1,32 @@
 import React from "react";
 import { useState } from "react";
-import pic from '../images/lens.JPG';
-const Nav = () => {
-    const [toggle, setToggle] = useState(false);
+import { CSSTransition } from 'react-transition-group';
+import '../App.css'
 
+const Nav = () => {
+    const [visible, setIsVisible] = useState(false);
 
     return (
-
-
-
-        <div className="">
-        {toggle ? <button className="left-0 top-0 w-full fixed p-3 text-right text-white lg:hidden" onClick={() => setToggle(!toggle)}> toggle off </button> : <button className="bg-blue-900 left-0 top-0 w-full fixed p-3 text-right text-white lg:hidden" onClick={() => setToggle(!toggle)}> toggle on </button>}         
-
-        <div className="sticky top-0 left-0 right-0 bg-blue-600 text-white font-black p-2 flex justify-between">
-            <p> Comic Finder </p>
-            <span onClick={() => setToggle(!toggle)}> = </span>
-        </div>
-
-            {toggle && (
-            <div className="fixed bg-gray-900 w-screen h-screen flex flex-col" id="nav">
-                <span className="sticky top-0 left-0 right-0 bg-blue-600 text-white font-black p-2" onClick={() => setToggle(!toggle)}> X </span>
-
-                <div style={{backgroundImage: `url(${pic})`}} className="border bg-cover rounded-full w-[100px] h-[100px] rounded-100 mx-auto"></div>
-                    <ul className="flex flex-col text-white gap-5 py-10 font-light text-2xl">
-                    <li className="cursor-pointer hover:text-green-400 text-center"> Profile </li>
-                        <li className="cursor-pointer hover:text-green-400 text-center"> Search </li>
-                        <li className="cursor-pointer hover:text-green-400 text-center"> Collections </li>
-                        <li className="cursor-pointer hover:text-green-400 text-center"> Wishlist </li>
-                    </ul> 
-                </div>
-            )}
+        <div>
+            <div className="fixed top-0 left-0 right-0 bg-gray-900 text-white flex flex-col p-5 md:hidden">
+                <span className="font-black text-end cursor-pointer" onClick={() => {setIsVisible(!visible)}}> {visible ? 'X' : '='} </span>
+                <ul className={`overflow-hidden flex flex-col gap-5 transition-all duration-1000 ${visible ? 'open' : 'closed'}`}>
+                    <li className="cursor-pointer"> Home </li>
+                    <li className="cursor-pointer"> Profile </li>
+                    <li className="cursor-pointer"> Collections </li>
+                    <li className="cursor-pointer"> Favorites </li>
+                    <li className="cursor-pointer"> Wishlist </li>
+                </ul>
+            </div>
+            <div className="top-0 left-0 bottom-0 w-[150px] md:fixed bg-gray-900 text-white flex flex-col p-5">
+                <ul className={`flex flex-col gap-5`}>
+                    <li className="cursor-pointer"> Home </li>
+                    <li className="cursor-pointer"> Profile </li>
+                    <li className="cursor-pointer"> Collections </li>
+                    <li className="cursor-pointer"> Favorites </li>
+                    <li className="cursor-pointer"> Wishlist </li>
+                </ul>
+            </div>
         </div>
     )
 }
