@@ -17,6 +17,10 @@
 .mobileNav-exit-active { max-height: 400px; }
 .mobileNav-exit-done { max-height: 0px; } */
 
+.side-nav {
+   background: red; 
+}
+
 .open {
     max-height: 1000px;
 }
