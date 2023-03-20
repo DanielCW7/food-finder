@@ -5,8 +5,9 @@ import Nav from './components/nav';
 
 function App() {
 
+
   return (
-    <div className="grid md:grid-cols-[150px_auto]">
+    <div className="md:grid md:grid-cols-[200px_auto]">
       <Nav />
       <Homepage />
     </div>
