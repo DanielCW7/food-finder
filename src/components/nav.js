@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 // import { CSSTransition } from 'react-transition-group';
-import '../App.css'
+import '../App.css';
 
 const Nav = () => {
     const [visible, setIsVisible] = useState(false);
@@ -21,7 +21,7 @@ const Nav = () => {
             <div className="hidden top-0 left-0 bottom-0 w-[200px] md:flex flex-col md:fixed bg-gray-900 text-white p-2">
                 <ul className="flex flex-col py-2">
                 <li className="border-l-4 border-l-gray-900 flex transition-all cursor-pointer px-0 py-2 hover:bg-gradient-to-r hover:from-green-700 hover:border-l-green-400"> 
-                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 122.88 113.97"><path class="cls-1" d="M18.69,73.37,59.18,32.86c2.14-2.14,2.41-2.23,4.63,0l40.38,40.51V114h-30V86.55a3.38,3.38,0,0,0-3.37-3.37H52.08a3.38,3.38,0,0,0-3.37,3.37V114h-30V73.37ZM60.17.88,0,57.38l14.84,7.79,42.5-42.86c3.64-3.66,3.68-3.74,7.29-.16l43.41,43,14.84-7.79L62.62.79c-1.08-1-1.24-1.13-2.45.09Z"/></svg>
+                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 122.88 113.97"><path d="M18.69,73.37,59.18,32.86c2.14-2.14,2.41-2.23,4.63,0l40.38,40.51V114h-30V86.55a3.38,3.38,0,0,0-3.37-3.37H52.08a3.38,3.38,0,0,0-3.37,3.37V114h-30V73.37ZM60.17.88,0,57.38l14.84,7.79,42.5-42.86c3.64-3.66,3.68-3.74,7.29-.16l43.41,43,14.84-7.79L62.62.79c-1.08-1-1.24-1.13-2.45.09Z"/></svg>
                         Home 
                     </li>
                     <li className="border-l-4 border-l-gray-900 flex transition-all cursor-pointer px-0 py-2 hover:bg-gradient-to-r hover:from-green-700 hover:border-l-green-400"> 
@@ -37,7 +37,7 @@ const Nav = () => {
                         Favorites 
                     </li>
                     <li className="border-l-4 border-l-gray-900 flex transition-all cursor-pointer px-0 py-2 hover:bg-gradient-to-r hover:from-green-700 hover:border-l-green-400"> 
-                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.57 122.88"><style type="text/css"></style><g><polygon class="st0" points="0,0 122.57,0 122.57,122.88 61.13,69.95 0,122.88 0,0"/></g></svg>
+                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.57 122.88"><style type="text/css"></style><g><polygon points="0,0 122.57,0 122.57,122.88 61.13,69.95 0,122.88 0,0"/></g></svg>
                         Wishlist
                     </li>
                 </ul>

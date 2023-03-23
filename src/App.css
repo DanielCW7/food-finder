@@ -3,20 +3,6 @@
 @tailwind utilities;
 
 
-/* .mobileNav-enter,
-.mobileNav-enter-done,
-.mobileNav-exit,
-.mobileNav-exit-done {
-    transition: ease-in-out all .3s;
-}
-
-.mobileNav-enter { max-height: 0px; }
-.mobileNav-enter-active { max-height: 400px; }
-.mobileNav-enter-done { max-height: 400px; }
-.mobileNav-exit { max-height: 400px; }
-.mobileNav-exit-active { max-height: 400px; }
-.mobileNav-exit-done { max-height: 0px; } */
-
 .side-nav {
    background: red; 
 }

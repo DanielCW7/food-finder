@@ -2,20 +2,20 @@ import React from "react";
 import Hero from "../components/hero";
 import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
-import booksAlt from '../images/booksAlt.webp'
+import favorites from '../images/favorite.webp';
 
 
-const News = () => {
+const Favorites = () => {
 
-    const bg = {backgroundImage: `url(${booksAlt})`}
+    const bg = {backgroundImage: `url(${favorites})`}
 
     return(
         <div>
-            <Hero background={bg}/>
+            <Hero background={bg} />
             <Dashboard />
             <Footer />
         </div>
     )
 }
 
-export default News
+export default Favorites
