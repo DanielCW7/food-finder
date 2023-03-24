@@ -1,14 +1,21 @@
 import React from "react";
+import cover from '../images/cover.png'
 
-const Card = () => {
+const Card = (props) => {
+
+    const bg = {backgroundImage: `url(${cover})`}
+
     return (
-        <div className="flex flex-col w-[150px] h-[250px]">
-                <div className="flex flex-row">
-                    <p> The Amazing Spiderman</p>
-                    <p>#123</p>
-                </div>
+        
+        <div className="flex flex-row justify-center max-w-sm">
+                <img className="aspect-comic w-1/3" src={cover}></img>
 
-            <div className="bg-gray-200 flex-grow rounded"> {/* replace with comic book-sized image */}</div> 
+                <div className="flex flex-col p-5 bg-gray-100 rounded-xl">
+                    <h4 className="text-lg"> The Amazing Spiderman </h4>
+                    <p> #129 </p>
+                    <p> series: the Amazing Spiderman </p>
+                    <div> rating? owned? favorited? wishlisted? </div>                        
+                </div>
         </div>
     )
 }
