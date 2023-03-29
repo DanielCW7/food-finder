@@ -32,8 +32,8 @@ function App() {
     
     <div className="md:grid md:grid-cols-[200px_auto]">
       <Nav />        
-        <Homepage />
-        {/* <Collection /> */}
+        {/* <Homepage /> */}
+        <Collection />
         {/* <Favorites /> */}
         {/* <Wishlist /> */}
         {/* <News /> */}

@@ -11,7 +11,7 @@ const Hero = (props) => {
 
     return (
         <div style={props.background} className="bg-cover bg-bottom">
-            <div className="min-h-30h md:min-h-40h flex flex-col justify-center">
+            <div className="min-h-40h md:min-h-50h flex flex-col justify-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-white text-center"> Comic Finder </h1>
                 <p className="font-bold text-white text-center"> the best tool for managing your comic books </p>
             </div>

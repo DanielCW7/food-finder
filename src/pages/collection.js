@@ -3,7 +3,7 @@ import Hero from "../components/hero";
 import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
 import collection from '../images/collection.webp'
-
+import CollectionSection from "../components/collectionSection";
 
 const Collection = () => {
 
@@ -12,7 +12,7 @@ const Collection = () => {
     return(
         <div>
             <Hero background={bg} />
-            <Dashboard />
+            <CollectionSection />
             <Footer />
         </div>
     )
