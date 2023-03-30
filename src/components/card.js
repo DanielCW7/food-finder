@@ -1,24 +1,22 @@
 import React from "react";
-import cover from '../images/cover.png'
-
+import cover from '../images/cover.png';
+import Badges from './badges';
 const Card = (props) => {
 
     const bg = {backgroundImage: `url(${cover})`}
 
     return (
         
-        <div className="flex flex-row justify-center max-w-sm">
-                <img className="aspect-comic w-1/3" src={cover}></img>
+        <div className="flex flex-row justify-center max-w-sm relative">
+                <img className="aspect-comic w-1/3 rounded-2xl shadow-xl" src={cover}></img>
 
-                <div className="flex flex-col justify-start p-5 bg-gray-100">
+                <div className="flex flex-col justify-start px-5 w-2/3">
                     <h4 className="text-lg"> The Amazing Spiderman </h4>
-                    <p className="font-black"> #129 </p>
-                    <p> Mar 1969 </p>
-                    <ul className="border flex justify-between"> 
-                        <li> favorite? add! </li>
-                        <li> wishlist </li>
-                        <li> owned </li>
-                    </ul>                        
+                    <span className="font-black border w-max px-2 py-1 rounded-full"> #129 </span>
+                    <p> Mar. 1969 </p>
+                    <p> MARVEL Comics </p>
+                    <p> Read Synopsis </p>
+                    {/* <Badges /> */}
                 </div>
         </div>
     )

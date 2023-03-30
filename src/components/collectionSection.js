@@ -3,7 +3,11 @@ import MultiCard from "./multiCard";
 
 const CollectionSection = () => {
     return (
-        <div className="flex flex-col justify-center gap-5 p-5 border overflow-visible">
+        <div className="flex flex-wrap gap-10 md:gap-20 p-10 border overflow-visible">
+            <MultiCard />
+            <MultiCard />
+            <MultiCard />
+            <MultiCard />
             <MultiCard />
             <MultiCard />
             <MultiCard />

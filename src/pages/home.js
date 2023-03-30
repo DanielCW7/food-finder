@@ -3,17 +3,20 @@ import Hero from "../components/hero";
 import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
 import books from '../images/books.jpg'
-
+import Nav from "../components/nav";
 
 const Home = () => {
 
     const bg = {backgroundImage: `url(${books})`}
 
     return(
-        <div>
-            <Hero background={bg} />
-            <Dashboard />
-            <Footer />
+        <div className="md:grid md:grid-cols-[200px_auto]">
+            <Nav /> 
+            <div>             
+                <Hero background={bg}  title="Comic Book Finder" />
+                <Dashboard />
+                <Footer />
+            </div>
         </div>
     )
 }

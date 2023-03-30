@@ -4,16 +4,20 @@ import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
 import collection from '../images/collection.webp'
 import CollectionSection from "../components/collectionSection";
+import Nav from "../components/nav";
 
 const Collection = () => {
 
     const bg = {backgroundImage: `url(${collection})`}
 
     return(
-        <div>
-            <Hero background={bg} />
-            <CollectionSection />
-            <Footer />
+        <div className="md:grid md:grid-cols-[200px_auto]">
+            <Nav /> 
+            <div>            
+                <Hero background={bg} title="Collections"/>
+                <CollectionSection />
+                <Footer />
+            </div>
         </div>
     )
 }

@@ -3,19 +3,22 @@ import Hero from "../components/hero";
 import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
 import wishlist from  '../images/wishlist.webp';
+import Nav from "../components/nav";
 
-
-const Collection = () => {
+const Wishlist = () => {
 
     const bg = {backgroundImage: `url(${wishlist})`}
 
     return(
-        <div>
-            <Hero background={bg} />
-            <Dashboard />
-            <Footer />
+        <div className="md:grid md:grid-cols-[200px_auto]">
+            <Nav /> 
+            <div>          
+                <Hero background={bg} title="Wishlist" />
+                <Dashboard />
+                <Footer />
+            </div> 
         </div>
     )
 }
 
-export default Collection
+export default Wishlist
