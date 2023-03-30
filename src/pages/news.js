@@ -4,7 +4,7 @@ import Dashboard from "../components/dashboard";
 import Footer from "../components/footer";
 import booksAlt from '../images/booksAlt.webp'
 import Nav from "../components/nav";
-
+import NewsArticles from "../components/newsArticles";
 
 const News = () => {
 
@@ -15,7 +15,7 @@ const News = () => {
             <Nav /> 
             <div>            
                 <Hero background={bg} title="News"/>
-                <Dashboard />
+                <NewsArticles />
                 <Footer />
             </div>
         </div>

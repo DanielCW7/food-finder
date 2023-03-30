@@ -24,6 +24,7 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/news" element={<News />} />
 
         </Routes>
 

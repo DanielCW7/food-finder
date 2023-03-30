@@ -17,6 +17,7 @@ const Nav = () => {
                     <Link className="cursor-pointer" to={'/collection'}> Collections </Link>
                     <Link className="cursor-pointer" to={'/favorites'}> Favorites </Link>
                     <Link className="cursor-pointer" to={'/wishlist'}> Wishlist </Link>
+                    <Link className="cursor-pointer" to={'/news'}> News </Link>
                 </ul>
             </div>
             <div className="hidden top-0 left-0 bottom-0 w-[200px] md:flex flex-col md:fixed bg-gray-900 text-white p-2 z-50">
@@ -38,8 +39,12 @@ const Nav = () => {
                         Favorites 
                     </Link>
                     <Link className="border-l-4 border-l-gray-900 flex cursor-pointer px-0 py-2 hover:bg-gradient-to-r hover:from-green-700 hover:border-l-green-400" to={'/wishlist'}> 
-                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.57 122.88"><style type="text/css"></style><g><polygon points="0,0 122.57,0 122.57,122.88 61.13,69.95 0,122.88 0,0"/></g></svg>
+                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.57 122.88"><g><polygon points="0,0 122.57,0 122.57,122.88 61.13,69.95 0,122.88 0,0"/></g></svg>
                         Wishlist
+                    </Link>
+                    <Link className="border-l-4 border-l-gray-900 flex cursor-pointer px-0 py-2 hover:bg-gradient-to-r hover:from-green-700 hover:border-l-green-400" to={'/news'}> 
+                        <svg className="cursor-pointer h-[15px] my-auto mx-2" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.4 122.88"><g><path d="M75.85,99.82l-4.67,8.17L45.62,95.38l0.88-8.77L75.85,99.82L75.85,99.82L75.85,99.82z M19.66,45.67H0v29.69 h19.66V45.67L19.66,45.67z M31.9,80.03l-1.92,19.16l48.03,23.69l10.04-17.56l30.35,14.8L118.4,0L24.22,45.19v31.38L31.9,80.03 L31.9,80.03z"/></g></svg>                        
+                        News
                     </Link>
                 </ul>
             </div>
