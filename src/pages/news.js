@@ -14,7 +14,7 @@ const News = () => {
         <div className="md:grid md:grid-cols-[200px_auto]">
             <Nav /> 
             <div>            
-                <Hero background={bg} title="News"/>
+                <Hero background={bg} title="News" description="Get me pictures of Spider-Man!"/>
                 <NewsArticles />
                 <Footer />
             </div>

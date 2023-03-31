@@ -14,7 +14,7 @@ const Favorites = () => {
         <div className="md:grid md:grid-cols-[200px_auto]">
             <Nav /> 
             <div>            
-                <Hero background={bg}  title="Favorites"/>
+                <Hero background={bg} title="Favorites" description="The best of the best!" />
                 <Dashboard />
                 <Footer />
             </div>

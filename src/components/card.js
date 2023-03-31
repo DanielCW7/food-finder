@@ -16,7 +16,7 @@ const Card = (props) => {
                     <p> Mar. 1969 </p>
                     <p> MARVEL Comics </p>
                     <p> Read Synopsis </p>
-                    {/* <Badges /> */}
+                    <Badges />
                 </div>
         </div>
     )

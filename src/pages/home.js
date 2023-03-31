@@ -13,7 +13,7 @@ const Home = () => {
         <div className="md:grid md:grid-cols-[200px_auto]">
             <Nav /> 
             <div>             
-                <Hero background={bg}  title="Comic Book Finder" />
+                <Hero background={bg} title="Comic Book Finder" description="The best tool for managing your comics" />
                 <Dashboard />
                 <Footer />
             </div>

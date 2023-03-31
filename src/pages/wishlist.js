@@ -13,7 +13,7 @@ const Wishlist = () => {
         <div className="md:grid md:grid-cols-[200px_auto]">
             <Nav /> 
             <div>          
-                <Hero background={bg} title="Wishlist" />
+                <Hero background={bg} title="Wishlist" description="Just use the money in your swear jar, sheesh" />
                 <Dashboard />
                 <Footer />
             </div> 
