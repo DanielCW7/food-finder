@@ -18,7 +18,6 @@ const Collection = () => {
                 <CollectionSection />
                 <Footer />
             </div>
-            <span />
         </div>
     )
 }
