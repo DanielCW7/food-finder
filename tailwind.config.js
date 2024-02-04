@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{html,js}"
   ],
   theme: {
+    container: {
+      center: true
+    },
     extend: {      
       aspectRatio: { 'comic': '2 / 3' },
       backgroundImage: { 'placeholder-pattern': "url('/src/images/books.jpg')" },
@@ -87,5 +90,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: ["dim"]
+  }
 }

@@ -2,16 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-.side-nav {
-   background: red; 
-}
-
-.open {
-    max-height: 1000px;
-}
-
-.closed {
-    max-height: 0px;
-}

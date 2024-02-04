@@ -7,14 +7,15 @@ import wishlist from  '../images/wishlist.webp';
 
 const Hero = (props) => {
 
-    console.log(props.background)
-
     return (
-        <div style={props.background} className="bg-cover bg-bottom">
-            <div className="min-h-40h md:min-h-50h flex flex-col justify-center">
-                <h1 className="text-4xl md:text-5xl font-bold text-white text-center"> {props?.title ?? "Comics!"} </h1>
-                <p className="font-bold text-white text-center"> {props?.description ?? ""}  </p>
+        <div className="container bg-gray-800 bg-opacity-50 prose lg:prose-lg h-96">
+            <div className="border-blue-900 border-1">
+                <h1 className=""> Comic Collector </h1>
+                <p> What are you waiting for?</p>
+                <button className="btn btn-primary"> Primary </button>                
             </div>
+
+
         </div>
     )
 }
