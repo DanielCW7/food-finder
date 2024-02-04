@@ -8,14 +8,14 @@ import wishlist from  '../images/wishlist.webp';
 const Hero = (props) => {
 
     return (
-        <div className="container bg-gray-800 bg-opacity-50 prose lg:prose-lg h-96">
-            <div className="border-blue-900 border-1">
-                <h1 className=""> Comic Collector </h1>
-                <p> What are you waiting for?</p>
-                <button className="btn btn-primary"> Primary </button>                
+        <div className="hero container mx-auto min-h-70h">
+            <div className="hero-content prose lg:prose-lg ">
+                <div>
+                    <h1 className=""> Comic Collector </h1>
+                    <p className=""> What are you waiting for?</p>
+                    <button className="btn btn-primary"> Jump In </button>                     
+                </div>
             </div>
-
-
         </div>
     )
 }
