@@ -7,11 +7,8 @@ const Home = () => {
 
 
     return(
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900">
-            <div className="">
-                <Hero />
-                <About />                
-            </div>
+        <div className="bg-white">
+            <Hero />
             {/* hero section */}
             {/* about section */}
             {/* new arrivals */}
