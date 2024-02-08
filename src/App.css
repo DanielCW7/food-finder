@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.mask {
+    background-image: url(./images/lineMask.png);
+}
