@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.mask {
-    background-image: url(./images/lineMask.png);
+
+
+/* open accordion */
+.open {
+    max-width: none;
+    transition: ease all .5s;
 }
 
+.closed {
+    max-width: 12rem;
+}

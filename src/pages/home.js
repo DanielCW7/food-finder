@@ -15,6 +15,7 @@ const Home = () => {
             <About />
             <Arrivals />
             {/* log in form */}
+            {/* stat UI */}
             <Footer />
         </div>
     )
