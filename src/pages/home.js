@@ -1,8 +1,9 @@
 import React from "react";
 import Hero from "../components/hero";
-import books from '../images/books.jpg'
 import About from "../components/about";
 import Nav from "../components/nav";
+import Footer from "../components/footer";
+import Arrivals from "../components/arrivals";
 
 const Home = () => {
 
@@ -12,10 +13,9 @@ const Home = () => {
             <Nav />
             <Hero />
             <About />
-            {/* hero section */}
-            {/* about section */}
-            {/* new arrivals */}
+            <Arrivals />
             {/* log in form */}
+            <Footer />
         </div>
     )
 }
