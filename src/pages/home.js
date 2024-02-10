@@ -8,7 +8,7 @@ const Home = () => {
 
 
     return(
-        <div className="bg-white">
+        <div className="bg-base-100">
             <Nav />
             <Hero />
             <About />
