@@ -8,8 +8,8 @@ const Arrivals = () => {
     return (
         <div className="bg-base-300 min-h-screen flex flex-col justify-center">
             <div className="container mx-auto p-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-2xl font-bold text-center mb-4"> New Arrivals </h2>
+                <div className="mx-auto text-center mb-16 block prose lg:prose-lg">
+                    <h2 className="text-center mb-4"> New Arrivals </h2>
                     <button className="btn btn-secondary"> Browse </button>                    
                 </div>
 

@@ -31,10 +31,10 @@ const Nav = () => {
                     <div className="hidden lg:flex ml-auto">
                         {/* desktop */}
                         <ul className="menu menu-horizontal px-1">
-                            <li><a> Home </a></li>
+                            <li><a href="/"> Home </a></li>
 
-                            <li><a> Browse </a></li>
-                            <li><a> Compare </a></li>
+                            <li><a href="/browse"> Browse </a></li>
+                            <li><a> Collections </a></li>
                         </ul>   
                     </div>                
             </div>

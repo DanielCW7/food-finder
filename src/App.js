@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './pages/home';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import Browse from './pages/browse';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -8,29 +9,12 @@ function App() {
 
   return (
 
-    <HashRouter basename="/">
-    <div>
-      {/* <div className="md:grid md:grid-cols-[200px_auto]"> */}
-        {/* <Nav />         */}
+    <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/browse" element={<Browse />} />
         </Routes>
-
-      </div>
-    </HashRouter>
-
-
-
-
-    
-    // <div className="md:grid md:grid-cols-[200px_auto]">
-    //   <Nav />        
-    //     <Home />
-    //     {/* <Collection /> */}
-    //     {/* <Favorites /> */}
-    //     {/* <Wishlist /> */}
-    //     {/* <News /> */}
-    // </div>
+    </BrowserRouter>
   )
 }
 

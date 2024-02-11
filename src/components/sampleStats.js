@@ -4,8 +4,8 @@ const SampleStats = () => {
     return (
         <div className="flex flex-col md:flex-row justify-center min-h-50h">
             
-            <div className="flex md:hidden justify-center my-8">
-                <h2 className="text-2xl font-bold"> Track your progress </h2>
+            <div className="md:hidden justify-center my-8 block prose lg:prose-lg">
+                <h2 className="text-center"> Track your progress </h2>
             </div>
 
             <div className="flex items-center gap-8">
@@ -28,8 +28,8 @@ const SampleStats = () => {
                         <div className="stat-desc">  </div>
                     </div>
                 </div>
-                <div>
-                    <h2 className="hidden md:flex text-2xl font-bold w-48 text-center"> Track your progress </h2>
+                <div className="prose md:prose-lg">
+                    <h2 className="hidden md:block text-2xl font-bold w-48 text-center"> Track your progress </h2>
                 </div>
                 <div className="container mx-auto stats-vertical max-w-64">
                     <div className="stat place-items-center">
