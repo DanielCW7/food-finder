@@ -1,7 +1,4 @@
 import React from "react";
-import xmen from "../images/xmen.jpg";
-import venom from "../images/venom.webp";
-import spiderman from "../images/spiderman.png";
 
 const Hero = (props) => {
 

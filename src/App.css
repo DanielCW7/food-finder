@@ -3,13 +3,3 @@
 @tailwind utilities;
 
 
-
-/* open accordion */
-.open {
-    max-width: none;
-    transition: ease all .5s;
-}
-
-.closed {
-    max-width: 12rem;
-}

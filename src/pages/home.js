@@ -4,6 +4,7 @@ import About from "../components/about";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import Arrivals from "../components/arrivals";
+import SampleStats from "../components/sampleStats";
 
 const Home = () => {
 
@@ -14,8 +15,7 @@ const Home = () => {
             <Hero />
             <About />
             <Arrivals />
-            {/* log in form */}
-            {/* stat UI */}
+            <SampleStats />
             <Footer />
         </div>
     )

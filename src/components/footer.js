@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="bg-base-300 p-8">
+        <footer className="bg-base-100 p-8">
             {/* bottom navigation element */}
             <div className="footer container mx-auto ">
                 <nav>
