@@ -13,18 +13,18 @@ const SampleStats = () => {
 
                 <div className="container mx-auto stats-vertical max-w-64">
                     <div className="stat place-items-center">
-                        <div className="stat-title"> Comics owned </div>
-                        <div className="stat-value"> 367 </div>
-                        <div className="stat-desc"> +10 this month </div>
+                        <div className="stat-title"> Calories consumed </div>
+                        <div className="stat-value"> 367,789 </div>
+                        <div className="stat-desc"> -102 this month </div>
                     </div>
                     <div className="stat place-items-center">
-                        <div className="stat-title"> Rare Items </div>
+                        <div className="stat-title"> Vegetable content </div>
                         <div className="stat-value"> 13% </div>
-                        <div className="stat-desc"> of your portfolio </div>
+                        <div className="stat-desc"> of your meals </div>
                     </div>
                     <div className="stat place-items-center">
-                        <div className="stat-title"> Average Price </div>
-                        <div className="stat-value"> 12.99 </div>
+                        <div className="stat-title"> Average plan price </div>
+                        <div className="stat-value"> $50.99 </div>
                         <div className="stat-desc">  </div>
                     </div>
                 </div>
@@ -33,18 +33,18 @@ const SampleStats = () => {
                 </div>
                 <div className="container mx-auto stats-vertical max-w-64">
                     <div className="stat place-items-center">
-                        <div className="stat-title "> Comics Liked </div>
-                        <div className="stat-value"> 3k </div>
+                        <div className="stat-title "> Items Saved </div>
+                        <div className="stat-value"> 302 </div>
                         <div className="stat-desc"> +10 this month </div>
                     </div>
                     <div className="stat place-items-center">
-                        <div className="stat-title"> Best Return </div>
-                        <div className="stat-value"> 201% </div>
-                        <div className="stat-desc"> from acquisition </div>
+                        <div className="stat-title"> Plans made </div>
+                        <div className="stat-value"> 4 </div>
+                        <div className="stat-desc">  </div>
                     </div>
                     <div className="stat place-items-center">
-                        <div className="stat-title"> Collection Worth </div>
-                        <div className="stat-value"> $1,500 </div>
+                        <div className="stat-title"> Fruit content </div>
+                        <div className="stat-value"> 17% </div>
                     </div>
                 </div>
             </div>
