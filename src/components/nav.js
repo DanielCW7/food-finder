@@ -3,7 +3,7 @@
 
 const Nav = () => {
     return (
-        <div className="navbar bg-base-100 fixed">
+        <div className="navbar bg-base-100 fixed z-50">
             <div className="container m-auto">
                     <div className="navbar-start flex lg:hidden">
                         <div className="dropdown">
@@ -12,17 +12,10 @@ const Nav = () => {
                             </div>
                             <ul tabIndex="0" className="bg-base-100 menu menu-lg dropdown-content">
                                 <li><a> Home </a></li>
-                                <li>
-                                    <a> Collections </a>
-                                    <ul>
-                                        <li><a> Favorites </a></li>
-                                        <li><a> Wishlist </a></li>
-                                        <li><a> Owned </a></li>
-                                    </ul>
-                                </li>
                                 <li><a> Browse </a></li>
-                                <li><a> Compare </a></li>
-
+                                <li><a> Plans </a></li>
+                                <li><a> Recipes </a></li>
+                                <li><a> Profile </a></li>
                             </ul>
                         </div>
                         {/* mobile */}
@@ -32,9 +25,12 @@ const Nav = () => {
                         {/* desktop */}
                         <ul className="menu menu-horizontal px-1">
                             <li><a href="/"> Home </a></li>
-
                             <li><a href="/browse"> Browse </a></li>
-                            <li><a> Collections </a></li>
+                            <li><a href="/Plans"> Plans </a></li>
+                            <li><a href="/recipes"> Recipes </a></li>
+                            <li><a href="/profile"> Profile </a></li>
+                            {/* icon with profile picture? */}
+
                         </ul>   
                     </div>                
             </div>

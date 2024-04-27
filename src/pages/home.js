@@ -3,7 +3,7 @@ import Hero from "../components/hero";
 import About from "../components/about";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
-import Arrivals from "../components/arrivals";
+import Suggestions from "../components/suggestions";
 import SampleStats from "../components/sampleStats";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
             <Nav />
             <Hero />
             <About />
-            <Arrivals />
+            <Suggestions />
             <SampleStats />
             <Footer />
         </div>

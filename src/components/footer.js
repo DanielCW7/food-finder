@@ -6,7 +6,7 @@ const Footer = () => {
             {/* bottom navigation element */}
             <div className="footer container mx-auto ">
                 <nav>
-                    <h6 className="footer-title"> Food Collector </h6>
+                    <h6 className="footer-title"> Food Finder </h6>
                     <a className="link"> Home </a>
                     <a className="link"> Collections </a>
                     <a className="link"> Browse </a>
