@@ -1,9 +1,9 @@
 import React from "react";
 
-const mainHero = (props) => {
+const mainHero = () => {
 
     return (
-            <div className="container mx-auto">
+            <header className="container mx-auto">
                 <div className="flex justify-center items-center min-h-screen">
                     <div className="block prose lg:prose-lg p-8 lg:p-12">
                         <h1 className=""> 
@@ -23,7 +23,7 @@ const mainHero = (props) => {
                         {/* goes to food browser */}
                     </div>                 
                 </div>
-            </div>
+            </header>
     )
 }
 

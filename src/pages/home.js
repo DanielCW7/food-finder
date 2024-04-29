@@ -1,5 +1,5 @@
 import React from "react";
-import mainHero from "../components/mainHero";
+import MainHero from "../components/mainHero";
 import About from "../components/about";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
@@ -12,7 +12,7 @@ const Home = () => {
     return(
         <div className="bg-base-100">
             <Nav />
-            <mainHero />
+            <MainHero />
             <About />
             <Suggestions />
             <SampleStats />
