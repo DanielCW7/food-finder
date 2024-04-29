@@ -26,9 +26,9 @@ const Nav = () => {
                         <ul className="menu menu-horizontal px-1">
                             <li><a href="/"> Home </a></li>
                             <li><a href="/browse"> Browse </a></li>
-                            <li><a href="/Plans"> Plans </a></li>
-                            <li><a href="/recipes"> Recipes </a></li>
-                            <li><a href="/profile"> Profile </a></li>
+                            <li><a href="/plans"> Plans </a></li>
+                            <li><a href="/collections"> Collections </a></li>
+                            <li><a href="/"> Profile </a></li>
                             {/* icon with profile picture? */}
 
                         </ul>   

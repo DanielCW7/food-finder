@@ -1,67 +1,23 @@
 import chicken from "../images/chicken.jpg"
 import apple from "../images/apples.jpg"
 import oats from "../images/oats.jpg"
+import FoodCard from "./foodCard"
 
 const Suggestions = () => {
-
+// will receive an array of healthy food items to be deleted from view or saved and then deleted from view
 
     return (
         <div className="bg-base-100 min-h-screen flex flex-col justify-center">
             <div className="container mx-auto p-8">
                 <div className="mx-auto text-center mb-16 block prose lg:prose-lg">
-                    <h2 className="text-center mb-4"> Spice up your meals with some... </h2>
+                    <h2 className="text-center mb-4"> Consider adding... </h2>
                 </div>
 
             <div className="flex justify-center flex-wrap gap-8">
-
-                <div className="card w-1/1 lg:w-1/3 flex flex-col shadow-xl image-full">
-                    <figure><img src={apple} className="img-reset"/></figure>
-                    <div className="card-body">
-                        <h5 className="card-title"> Apples </h5>
-                        <p> ~90 cal. </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="badge badge-secondary"> affordable </span>
-                            <span className="badge badge-primary"> High fiber </span>
-                        </div>
-                        <div className="card-actions">
-                            <button className="btn"> Save </button>
-                            <button className="btn"> Dismiss </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card w-1/1 lg:w-1/3 flex flex-col shadow-xl image-full">
-                    <figure><img src={oats} className="img-reset"/></figure>
-                    <div className="card-body">
-                        <h5 className="card-title"> Oats </h5>
-                        <p> ~90 cal. </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="badge badge-secondary"> affordable </span>
-                            <span className="badge badge-primary"> High fiber </span>
-                        </div>
-                        <div className="card-actions">
-                            <button className="btn"> Save </button>
-                            <button className="btn"> Dismiss </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card w-1/1 lg:w-1/3 flex flex-col shadow-xl image-full">
-                    <figure><img src={chicken} className="img-reset"/></figure>
-                    <div className="card-body">
-                        <h5 className="card-title"> Chicken </h5>
-                        <p> ~90 cal. </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="badge badge-secondary"> affordable </span>
-                            <span className="badge badge-primary"> High fiber </span>
-                        </div>
-                        <div className="card-actions">
-                            <button className="btn"> Save </button>
-                            <button className="btn"> Dismiss </button>
-                        </div>
-                    </div>
-                </div> 
- 
+                
+                <FoodCard name="Chicken" img={chicken} calories="90 calories per lb." attr_1="High Protein" attr_2="Affordable" />
+                <FoodCard name="Oats" img={oats} calories="90 calories per cup" attr_1="High Fiber" attr_2="Affordable" />
+                <FoodCard name="Apples" img={apple} calories="90 calories each" attr_1="High Fiber" attr_2="Vit. C" />
 
             </div>
 

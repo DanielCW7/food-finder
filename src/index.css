@@ -15,3 +15,7 @@ code {
 .img-reset {
   aspect-ratio: 16 / 9;
 }
+
+.img-square {
+  object-fit: cover;
+}
