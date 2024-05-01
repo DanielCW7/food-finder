@@ -10,7 +10,7 @@ const Browse = () => {
 
             <MinorHero title="Browse" />
 
-        {/* toggle table format  */}
+            {/* toggle table format  */}
             <table>
 
             </table>

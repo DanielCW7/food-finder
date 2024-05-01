@@ -1,4 +1,6 @@
 
+// break out About cards into separate components
+
 const About = () => {
     return (
         <div className="bg-base-200 min-h-screen flex flex-col justify-center">
