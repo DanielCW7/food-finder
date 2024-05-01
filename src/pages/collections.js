@@ -10,7 +10,7 @@ const Collections = () => {
 
             <MinorHero title="Collections" />
 
-        {/* toggle table format  */}
+            {/* toggle table format with switchboard */}
             <table>
 
             </table>

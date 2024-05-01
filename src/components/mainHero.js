@@ -1,6 +1,6 @@
 import React from "react";
 
-const mainHero = () => {
+const MainHero = () => {
 
     return (
             <header className="container mx-auto">
@@ -30,4 +30,4 @@ const mainHero = () => {
     )
 }
 
-export default mainHero
+export default MainHero

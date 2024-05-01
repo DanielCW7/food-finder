@@ -1,6 +1,7 @@
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import MinorHero from "../components/minorHero";
+import SearchResults from "../components/searchResults";
 
 const Browse = () => {
     return (
@@ -10,10 +11,8 @@ const Browse = () => {
 
             <MinorHero title="Browse" />
 
-            {/* toggle table format  */}
-            <table>
-
-            </table>
+            {/* toggle table format with switchboard */}
+            <SearchResults />
             <Footer />
         </>
     )
