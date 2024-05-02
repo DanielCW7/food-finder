@@ -1,49 +1,51 @@
 // For the browse page
 import { useState } from "react"
+import chicken from "../images/chicken.jpg";
+import apples from "../images/apples.jpg";
+import oats from "../images/oats.jpg";
 
 
 const SearchResults = () => {
 
     // manage current state of the table here - both tables will revceive the same array of data
-    const [isToggled, setToggle] = useState(false);
+    const [isData, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true)
 
     const sampleArray = [
-        {"food":"apple", "calories": 90, "category": "fruit"},
-        {"food":"chicken", "calories": 93450, "category": "poultry"},
-        {"food":"orange", "calories": 90, "category": "fruit"},
-        {"food":"rice", "calories": 9052, "category": "fruit"},
-        {"food":"pickle", "calories": 950, "category": "poultry"},
-        {"food":"bread", "calories": 90, "category": "fruit"},
-        {"food":"lentils", "calories": 9250, "category": "fruit"},
-        {"food":"bananas", "calories": 920, "category": "poultry"},
-        {"food":"grapes", "calories": 90, "category": "fruit"},
+        {"food":"apple", "calories": 90, "category": "fruit", "image": chicken},
+        {"food":"chicken", "calories": 93450, "category": "poultry", "image": apples},
+        {"food":"orange", "calories": 90, "category": "fruit", "image": oats},
+        {"food":"rice", "calories": 9052, "category": "fruit", "image": chicken},
+        {"food":"pickle", "calories": 950, "category": "poultry", "image": apples},
+
     ]
 
     let gridView = 
-        <table className="table">
-            <th>
+        <table className="table table-zebra">
+            <thead>
                 <tr>
                     <th>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" className="checkbox"/>
                         </label>
                     </th>
+                    <th></th>
                     <th> Food </th>
                     <th> Calories </th>
-                    <th> Nutrition Category </th>
+                    <th> Category </th>
+                    
                 </tr>
-            </th>
+            </thead>
             <tbody>
                 {
                     sampleArray.map(item => {
                         return (
                             <tr>
-                                <th>
-                                    <input type="checkbox" />
-                                </th>
-                            <td><div>{item.food} </div></td> 
-                            <td><div>{item.calories} </div></td> 
-                            <td><div>{item.category} </div></td> 
+                                <td><input type="checkbox" className="checkbox" /></td>
+                                <td><img src={item?.image ?? apples} className="img-square w-12 md:w-28 h-12 md:h-28 rounded-xl"/></td>
+                                <td><p>{item.food} </p></td> 
+                                <td><p>{item.calories} </p></td> 
+                                <td><p>{item.category} </p></td> 
                             </tr>  
                         )
                     })
@@ -52,17 +54,40 @@ const SearchResults = () => {
             </tbody>
 
         </table>
+
     return (
         
-        <div className="container mx-auto">
-            <label className="swap">
-                <input type="checkbox" onClick={() => setToggle(!isToggled)}/>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="swap-on w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" /></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="swap-off w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125Z" /></svg>
-            </label>
+        <div className="container mx-auto p-8">
 
-            <h2> {isToggled ? "GRID" : "COLUMN"} </h2>
-            {isToggled ? gridView : "COLUMN"}
+            <div className="flex gap-2 sticky top-16 bg-base-100 z-20 py-4">
+
+
+                {/* filter options */}
+                <div>
+                    <label className="input input-bordered input-md flex items-center rounded-xl ">
+                        <input type="text" className="grow bg-base-100" placeholder="Search by name" />                             
+                    </label>                    
+                </div>
+
+                <div className="flex gap-2">
+                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Fruit & Vegetable </label>
+                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Starch </label>
+                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Protein </label>
+                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Dairy </label>
+                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Fat </label>                    
+                </div>
+
+            </div>
+
+
+            {/* pagination */}
+
+            {isData ? gridView : null}
                         
         </div>
 
