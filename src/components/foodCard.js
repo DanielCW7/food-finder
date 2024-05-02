@@ -4,7 +4,7 @@
 const foodCard = (props) => {
     return (
         
-        <div className="card w-1/1 lg:w-1/3 flex flex-col shadow-xl image-full">
+        <div className="card w-1/1 md:w-1/2 lg:w-1/3 flex flex-col shadow-xl image-full">
             <figure><img src={props.img} className="img-reset"/></figure>
             <div className="card-body">
                 <h5 className="card-title"> {props.name} </h5>

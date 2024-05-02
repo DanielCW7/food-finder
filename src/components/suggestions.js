@@ -15,6 +15,7 @@ const Suggestions = () => {
 
             <div className="flex justify-center flex-wrap gap-8">
                 
+                {/* populated via array */}
                 <FoodCard name="Chicken" img={chicken} calories="90 calories per lb." attr_1="High Protein" attr_2="Affordable" />
                 <FoodCard name="Oats" img={oats} calories="90 calories per cup" attr_1="High Fiber" attr_2="Affordable" />
                 <FoodCard name="Apples" img={apple} calories="90 calories each" attr_1="High Fiber" attr_2="Vit. C" />
