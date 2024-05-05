@@ -14,8 +14,8 @@ const Home = () => {
             <Nav />
             <MainHero />
             <About />
+            <SampleStats />            
             <Suggestions />
-            <SampleStats />
             <Footer />
         </div>
     )

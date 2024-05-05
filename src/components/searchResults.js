@@ -64,22 +64,23 @@ const SearchResults = () => {
 
                 {/* filter options */}
                 <div>
-                    <label className="input input-bordered input-md flex items-center rounded-xl ">
+                    <label className="input input-bordered input-md flex items-center rounded-xl focus:border-warning">
                         <input type="text" className="grow bg-base-100" placeholder="Search by name" />                             
                     </label>                    
                 </div>
 
-                <div className="flex gap-2">
-                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
-                    <label className="my-auto"> Fruit & Vegetable </label>
-                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
-                    <label className="my-auto"> Starch </label>
-                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
-                    <label className="my-auto"> Protein </label>
-                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
-                    <label className="my-auto"> Dairy </label>
-                    <input type="radio" name="name-1" className="radio radio-xs my-auto"/>
-                    <label className="my-auto"> Fat </label>                    
+                <div className="flex gap-8">
+                    
+                    <div className="flex gap-2"><input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Fruit & Vegetable </label></div>
+                    <div className="flex gap-2"><input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Starch </label></div>
+                    <div className="flex gap-2"><input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Protein </label></div>
+                    <div className="flex gap-2"><input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Dairy </label></div>
+                    <div className="flex gap-2"><input type="radio" name="name-1" className="radio radio-xs my-auto"/>
+                    <label className="my-auto"> Fat </label></div>                    
                 </div>
 
             </div>
