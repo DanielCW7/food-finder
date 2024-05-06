@@ -5,6 +5,7 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import Suggestions from "../components/suggestions";
 import SampleStats from "../components/sampleStats";
+import Compare from "../components/compare";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <MainHero />
             <About />
             <SampleStats />            
+            <Compare />            
             <Suggestions />
             <Footer />
         </div>
