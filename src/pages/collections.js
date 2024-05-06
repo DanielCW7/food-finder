@@ -1,4 +1,4 @@
-import Nav from "../components/nav";
+import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
 import MinorHero from "../components/minorHero";
 

@@ -1,13 +1,14 @@
-import chicken from "../images/chicken.jpg"
-import apple from "../images/apples.jpg"
+import chicken from "../../images/chicken.jpg"
+import apple from "../../images/apples.jpg"
 
 const Compare = () => {
 
     return (
         <div className="flex flex-col justify-center min-h-50h bg-base-300 p-8">
             
-            <div className="justify-center my-8 block prose lg:prose-lg mx-auto">
+            <div className="text-center justify-center my-8 block prose lg:prose-lg mx-auto">
                 <h2 className="text-center"> How do they compare? </h2>
+                <p> Does each food have what you need? With the compare function, you'll be able to know for sure what nutrients you're getting. </p>
             </div>
 
             {/* divider "VS" */}

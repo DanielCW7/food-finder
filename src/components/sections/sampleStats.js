@@ -5,8 +5,9 @@ const SampleStats = () => {
     return (
         <div className="flex flex-col justify-center min-h-50h p-8">
             
-            <div className="justify-center my-8 block prose lg:prose-lg mx-auto">
-                <h2 className="text-center"> Track your progress </h2>
+            <div className="justify-center text-center my-8 block prose lg:prose-lg mx-auto">
+                <h2 className=""> Track your progress. </h2>
+                <p> Set up multiple different ways to record your food consumption with a variety of helpful trackers. </p>
             </div>
 
             <div className="flex items-center gap-8">

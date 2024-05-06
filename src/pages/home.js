@@ -1,11 +1,11 @@
 import React from "react";
 import MainHero from "../components/mainHero";
-import About from "../components/about";
-import Nav from "../components/nav";
+import About from "../components/sections/about";
+import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
-import Suggestions from "../components/suggestions";
-import SampleStats from "../components/sampleStats";
-import Compare from "../components/compare";
+import Suggestions from "../components/sections/suggestions";
+import SampleStats from "../components/sections/sampleStats";
+import Compare from "../components/sections/compare";
 
 const Home = () => {
 
