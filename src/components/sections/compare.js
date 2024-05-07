@@ -25,6 +25,7 @@ const Compare = () => {
                     
                     <div className="flex flex-grow gap-2 md:max-w-md">
                         <ul className="flex flex-col gap-2 leading-3 border-r border-base-100 p-2">
+                            <li> Name </li>
                             <li> Calories </li>
                             <li> Fat </li>
                             <li> Protein </li>
@@ -32,18 +33,20 @@ const Compare = () => {
                             <li> Sugar </li>
                             <li> Fiber </li>
                         </ul>
-                        <div className="flex flex-col justify-center gap-3 flex-1 leading-3">
-                            <p> 250 </p>
-                            <progress className="progress progress-primary" value={10} max="100"></progress>
-                            <progress className="progress progress-secondary" value={80} max="100"></progress>
-                            <progress className="progress progress-accent" value={5} max="100"></progress>
-                            <progress className="progress progress-warning" value={0} max="100"></progress>
-                            <progress className="progress progress-info" value={5} max="100"></progress>
-                        </div>                    
+                        <ul className="flex flex-col justify-center gap-2 flex-1 leading-3">
+                            <li><p> Chicken </p></li>
+                            <li><p> 250 </p></li>
+                            <li><progress className="progress progress-primary" value={10} max="100"></progress></li>
+                            <li><progress className="progress progress-secondary" value={80} max="100"></progress></li>
+                            <li><progress className="progress progress-accent" value={5} max="100"></progress></li>
+                            <li><progress className="progress progress-warning" value={0} max="100"></progress></li>
+                            <li><progress className="progress progress-info" value={5} max="100"></progress></li>
+                        </ul>                    
                     </div>
 
                     <div className="flex flex-grow gap-2 md:max-w-md">
-                        <ul className="flex flex-col gap-2 leading-3 border-r border-base-100 p-2">
+                    <ul className="flex flex-col gap-2 leading-3 border-r border-base-100 p-2">
+                            <li> Name </li>
                             <li> Calories </li>
                             <li> Fat </li>
                             <li> Protein </li>
@@ -51,14 +54,15 @@ const Compare = () => {
                             <li> Sugar </li>
                             <li> Fiber </li>
                         </ul>
-                        <div className="flex flex-col justify-center gap-3 flex-1 leading-3">
-                            <p> 90 </p>
-                            <progress className="progress progress-primary" value={40} max="100"></progress>
-                            <progress className="progress progress-secondary" value={0} max="100"></progress>
-                            <progress className="progress progress-accent" value={60} max="100"></progress>
-                            <progress className="progress progress-warning" value={10} max="100"></progress>
-                            <progress className="progress progress-info" value={70} max="100"></progress>
-                        </div>                    
+                        <ul className="flex flex-col justify-center gap-2 flex-1 leading-3">
+                            <li><p> Apple </p></li>
+                            <li><p> 90 </p></li>
+                            <li><progress className="progress progress-primary" value={40} max="100"></progress></li>
+                            <li><progress className="progress progress-secondary" value={0} max="100"></progress></li>
+                            <li><progress className="progress progress-accent" value={60} max="100"></progress></li>
+                            <li><progress className="progress progress-warning" value={10} max="100"></progress></li>
+                            <li><progress className="progress progress-info" value={70} max="100"></progress></li>
+                        </ul>                    
                     </div>
                 </div>
 

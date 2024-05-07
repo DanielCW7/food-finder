@@ -13,7 +13,7 @@ const NewUser = () => {
                         <p> Sign up and take control of the way you eat today! </p> 
                     </div>                   
                     <form className="flex flex-col gap-2">
-                        <input type="textarea" className="input" placeholder="First name" />
+                        <input type="textarea" className="input" placeholder="First name" required="true"/>
                         <input type="textarea" className="input" placeholder="Last name" />
                         <input type="email" className="input" placeholder="Email" />
                         <button className="btn btn-primary btn-disabled"> Sign up </button>
