@@ -21,3 +21,8 @@ code {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+.carrot-dark-orange { fill: #d48a00; }
+.carrot-light-orange { fill: #faa200; }
+.carrot-dark-green { fill: #048500; }
+.carrot-light-green { fill: #06ac00; }

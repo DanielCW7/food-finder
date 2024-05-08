@@ -83,13 +83,13 @@ const About = () => {
 
                     <div className="flex flex-col sm:flex-row transition-all rounded-xl p-8 sm:p-10 cursor-pointer hover:bg-base-300 hover:-translate-y-1">
                         <div className="my-auto mr-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 sm:w-12 sm:h-12 stroke-accent">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 sm:w-12 sm:h-12 stroke-accent">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                             </svg>
                         </div>                        
                         <div className="my-auto flex-grow">
                             <h3 className="text-2xl font-bold"> Build </h3>
-                            <p className="text-xs sm:text-sm"> Fine-tune your meal plans to your liking. </p>
+                            <p className="text-xs sm:text-sm"> Your profile and start for free. </p>
                         </div> 
                     </div>
                 </div>
