@@ -24,20 +24,19 @@ const foodCard = (props) => {
         //     </span>
         // </div>
 
-        <div className="w-48 flex flex-col shadow-xl rounded-xl bg-base-300">
-            <img src={props.img} className="img-reset rounded-xl"/>
-            <div className="flex flex-col p-8">
+        <div className="w-48 flex flex-col rounded-xl bg-base-300 border border-gray-600 relative">
+            <button className="btn btn-circle btn-outline w-8 h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-4 h-4 stroke-current">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+            </button>            
+            <img src={props.img} className="img-square rounded-xl"/>
+            <div className="flex flex-col px-6 py-2">
 
                 <div className="flex flex-col">
                     <h4 className="text-xl font-bold"> {props.name} </h4>
-                    <div className="flex mt-6 gap-2">
-                        <button className="btn btn-sm flex-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
-                            </svg>
-                            Save
-                        </button>
-                    </div>                    
+                    <p className="text-sm font-thin"> 150 cal. </p>
+                                      
                 </div>
             </div>
             {/* <span className="absolute right-2 top-2 z-20">

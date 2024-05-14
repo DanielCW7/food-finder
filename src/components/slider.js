@@ -11,7 +11,7 @@ const slider = (array) => {
 
     return (
         <div className="flex justify-center flex-wrap">
-            <div className="carousel rounded-box gap-8">
+            <div className="carousel rounded-box gap-8 py-4">
                 <div className="carousel-item">
                     <FoodCard name="Chicken" img={chicken} calories="90 calories per lb." attr_1="High Protein" attr_2="Affordable" />,
                 </div> 
