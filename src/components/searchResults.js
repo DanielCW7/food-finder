@@ -26,6 +26,7 @@ const SearchResults = () => {
                 <tr>
                     <th>
                         <label>
+                            {/* if checked, un-check/check all boxes */}
                             <input type="checkbox" className="checkbox"/>
                         </label>
                     </th>
@@ -64,10 +65,12 @@ const SearchResults = () => {
 
                 {/* filter options */}
                 <div>
+                    {/* use JOIN to group filter options / search / form submits */}
                     <label className="input input-bordered input-md flex items-center rounded-xl focus:border-warning">
                         <input type="text" className="grow bg-base-100" placeholder="Search by name" />                             
                     </label>                    
                 </div>
+
 
                 <div className="flex gap-8">
                     
