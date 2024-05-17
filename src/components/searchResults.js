@@ -4,6 +4,7 @@ import chicken from "../images/chicken.jpg";
 import apple from "../images/apples.jpg";
 import oats from "../images/oats.jpg";
 import FoodCard from "./foodCard";
+import ExtFoodCard from "./extFoodCard";
 
 const SearchResults = () => {
 
@@ -93,55 +94,10 @@ const SearchResults = () => {
 
 
             {/* pagination */}
-            <div className="grid gap-2">
-                <div className="flex flex-row border-b border-gray-600 p-8">
-                    <FoodCard name="apple" img={apple} calories="90 calories each" />
-                    
-                    <div className="flex flex-col flex-1">
-                        <div className="flex flex-row flex-1 p-2">
-                            <ul className="w-auto mr-2">
-                                <li>Carbs</li>
-                                <li>Protein</li>
-                                <li>Fat</li>
-                            </ul>
-                            <ul className="flex-1">
-                                <li><progress className="progress progress-accent" value={50} max="100"></progress></li>
-                                <li><progress className="progress progress-secondary" value={10} max="100"></progress></li>
-                                <li><progress className="progress progress-primary" value={40} max="100"></progress></li>
-                            </ul>
-                            
-
-                            {/* stats : nutrition, macros, related foods, calories per 100mg */}
-                            {/* links to related foods by group, recipes available, actions */}
-                            
-                        </div> 
-                        <div className="p-2">
-                            <p> Good for: </p>
-                            <ul>
-                                <li className="flex flex-row"> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-success">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    Vitamin C. 
-                                </li>
-                                <li className="flex flex-row"> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-success">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    Energy
-                                </li>                                
-                                <li className="flex flex-row "> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-success">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                    Fiber 
-                                </li>
-                            </ul>
-                            <a className="link"> More Info </a>
-                        </div>                       
-                    </div>
-
-                </div>
+            <div className="flex flex-wrap justify-starts">
+                <ExtFoodCard heart={true} name="Apple" img={apple} calories={90} attr_1="Vitamin C" attr_2="Energy" attr_3="Fiber" fat={30} protein={0} carbs={70} />
+                <ExtFoodCard heart={true} name="Chicken" img={chicken} calories={150} attr_1="Protein" attr_2="" attr_3="" fat={10} protein={80} carbs={10} />
+                <ExtFoodCard heart={true} name="Oats" img={oats} calories={120} attr_1="Fiber" attr_2="Heart healthy" attr_3="Lower cholesterol" fat={20} protein={0} carbs={80} />
             </div>
 
             {/* {isData ? gridView : null} */}
