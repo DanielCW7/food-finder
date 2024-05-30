@@ -7,6 +7,7 @@ const foodCard = (props) => {
         // wrap in an anchor tag for more food details
         <div className="w-48 flex flex-col rounded-xl bg-base-300 border border-gray-600 relative">
             
+            {/* heart icon */}
             {
                 props.heart 
                 ?   <button className="btn btn-circle btn-outline absolute right-2 top-2 glass">
