@@ -5,7 +5,7 @@ import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
 import Suggestions from "../components/sections/suggestions";
 import SampleStats from "../components/sections/sampleStats";
-import Compare from "../components/sections/compare";
+import SampleCompare from "../components/sections/sampleCompare";
 import NewUser from "../components/sections/newUser";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
             <MainHero />
             <About />
             <SampleStats />            
-            <Compare />            
+            <SampleCompare />            
             <Suggestions />
             <NewUser />
             <Footer />

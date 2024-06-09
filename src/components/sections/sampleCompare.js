@@ -1,7 +1,7 @@
 import chicken from "../../images/chicken.jpg"
 import apple from "../../images/apples.jpg"
 
-const Compare = () => {
+const SampleCompare = () => {
 
     return (
         <div className="flex flex-col justify-center min-h-50h bg-base-300 p-8">
@@ -72,4 +72,4 @@ const Compare = () => {
     )
 }
 
-export default Compare
+export default SampleCompare

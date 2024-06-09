@@ -1,6 +1,5 @@
 import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
-import ProfileTabs from "../components/profileTabs";
 
 
 const Profile = () => {
@@ -18,8 +17,6 @@ const Profile = () => {
                         </div>                 
                     </div>
                 </div>  
-
-                <ProfileTabs />  
             </div>
 
             {/* profile stats */}

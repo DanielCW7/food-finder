@@ -61,7 +61,8 @@ const ExtFoodCard = (props) => {
                             : null
                         }
                     </ul>
-                    <a className="link"> More Info </a>
+                    <a className="link" href={"browse/" + props.name}> More Info </a>
+                    {/* for URL, "browse/(food api endpoint)" */}
                 </div>                       
             </div>
         </div>        
