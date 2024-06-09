@@ -1,5 +1,7 @@
 import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
+import ProfileTabs from "../components/profileTabs";
+
 
 const Profile = () => {
     return (
@@ -15,7 +17,9 @@ const Profile = () => {
                             <h1 className="text-center"> Welcome! </h1>
                         </div>                 
                     </div>
-                </div>    
+                </div>  
+
+                <ProfileTabs />  
             </div>
 
             {/* profile stats */}
