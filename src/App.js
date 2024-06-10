@@ -18,8 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/browse/:id" element={<FoodDetails />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/collections" element={<Collections />} /> */}
+          {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="/compare" element={<Compare />} />
         </Routes>
     </BrowserRouter>
