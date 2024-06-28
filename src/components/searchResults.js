@@ -3,6 +3,7 @@ import { useState } from "react"
 import chicken from "../images/chicken.jpg";
 import apple from "../images/apples.jpg";
 import oats from "../images/oats.jpg";
+import berries from "../images/berries.webp"
 import FoodCard from "./foodCard";
 import ExtFoodCard from "./extFoodCard";
 
@@ -98,6 +99,7 @@ const SearchResults = () => {
                 <ExtFoodCard heart={true} name="Apple" img={apple} calories={90} attr_1="Vitamin C" attr_2="Energy" attr_3="Fiber" fat={30} protein={0} carbs={70} />
                 <ExtFoodCard heart={true} name="Chicken" img={chicken} calories={150} attr_1="Protein" attr_2="" attr_3="" fat={10} protein={80} carbs={10} />
                 <ExtFoodCard heart={true} name="Oats" img={oats} calories={120} attr_1="Fiber" attr_2="Heart healthy" attr_3="Lower cholesterol" fat={20} protein={0} carbs={80} />
+                <ExtFoodCard heart={true} name="Mixed berries" img={berries} calories={120} attr_1="Fiber" attr_2="Heart healthy" attr_3="" fat={20} protein={0} carbs={80} />
             </div>
 
             {/* {isData ? gridView : null} */}
