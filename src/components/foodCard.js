@@ -8,7 +8,7 @@ const foodCard = (props) => {
         <div className="w-48 flex flex-col rounded-xl bg-base-300 border border-gray-600 relative">
             
             {/* heart icon */}
-            {
+            {/* {
                 props.heart 
                 ?   <button className="btn btn-circle btn-outline absolute right-2 top-2 glass">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
@@ -16,7 +16,7 @@ const foodCard = (props) => {
                         </svg>
                     </button>
                 : null
-            }
+            } */}
             
             <img src={props.img} className="img-square rounded-xl"/>
             <div className="flex flex-col px-6 py-2">

@@ -3,7 +3,6 @@ import React from "react";
 const minorHero = (props) => {
     // receives hero image and title
 
-
     return (
         // bg here
         <div className="bg-base-300 mb-8 background-reset" style={{backgroundImage: `url(${props.background})`}}>

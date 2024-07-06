@@ -72,24 +72,27 @@ const SearchResults = () => {
                 {/* filter options */}
                 <div className="join flex w-full">
                     {/* use JOIN to group filter options / search / form submits */}
-                    <label className="flex-1 input input-bordered input-md flex items-center rounded-xl focus:border-warning join-item">
-                        <input type="text" className="grow bg-base-100" placeholder="Search by name" />                             
-                    </label> 
-                    <div className="flex gap-8 join-item">
+                    <label className="flex-1 pr-0 input input-bordered input-md flex items-center rounded-xl focus:border-warning join-item">
+                        <input type="text" className="grow bg-base-100" placeholder="Search by name" />  
 
-                        <label for="filter-options" className="input input-bordered input-md flex items-center rounded-xl focus:border-warning join-item">
-                            <select className="grow bg-base-100" name="filter-options" id="filter-options">
-                                <option> Fruit & Vegetable </option>
-                                <option> Starch </option>
-                                <option> Protein </option>
-                                <option> Dairy </option>
-                                <option> Fat </option>
-                            </select>                  
-                        </label>                   
-                    </div>
-                    <button className="join-item btn btn-secondary rounded-xl"> 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-                    </button>                    
+                        <div className="flex gap-8 join-item">
+
+                            <label for="filter-options" className="input input-bordered input-md flex items-center rounded-xl focus:border-warning join-item">
+                                <select className="grow bg-base-100" name="filter-options" id="filter-options">
+                                    <option> Fruit & Vegetable </option>
+                                    <option> Starch </option>
+                                    <option> Protein </option>
+                                    <option> Dairy </option>
+                                    <option> Fat </option>
+                                </select>                  
+                            </label>                   
+                        </div>
+                        <button className="join-item btn btn-secondary rounded-xl"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                        </button>                        
+
+                    </label> 
+                    
                 </div>
             </div>
 
