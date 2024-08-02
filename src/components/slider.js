@@ -14,22 +14,22 @@ const slider = (array) => {
         <div className="flex justify-center flex-wrap">
             <div className="carousel rounded-box gap-8 py-4">
                 <div className="carousel-item">
-                    <FoodCard name="Apple" img={apple} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Apple" img={apple} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
                 <div className="carousel-item">
-                    <FoodCard name="Oats" img={oats} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Oats" img={oats} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
                 <div className="carousel-item">
-                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
                 <div className="carousel-item">
-                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
                 <div className="carousel-item">
-                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
                 <div className="carousel-item">
-                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />,
+                    <FoodCard name="Chicken" img={chicken} calories={90} attr_1="High Protein" attr_2="Affordable" />
                 </div> 
             </div>            
         </div>
