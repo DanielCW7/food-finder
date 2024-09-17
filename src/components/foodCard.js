@@ -5,7 +5,7 @@ const foodCard = (props) => {
     return (
 
         // wrap in an anchor tag for more food details
-        <div className="w-48 flex flex-col rounded-xl bg-base-300 border border-gray-600 relative">
+        <div className="w-48 flex flex-col relative">
             
             {/* heart icon */}
             {/* {
@@ -23,7 +23,7 @@ const foodCard = (props) => {
 
                 <div className="flex flex-col">
                     <h4 className="text-xl font-bold"> {props.name} </h4>
-                    <p className="text-sm font-thin"> {props.calories} calories per 100mg </p>
+                    <p className="text-sm font-thin"> {props.calories} cal / 100mg </p>
                                       
                 </div>
             </div>

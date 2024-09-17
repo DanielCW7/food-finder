@@ -28,7 +28,7 @@ const Compare = () => {
                     </label> 
                     
                     {/* takes 3 form submissions before running a comparison */}
-                   
+
                 </div>
                 </div>
                 <div className="container p-5 flex w-full justify-center">
@@ -44,7 +44,7 @@ const Compare = () => {
                     <li className="step step-primary">Food 1</li>
                     <li className="step step-primary">Food 2</li>
                     <li className="step step-primary">Compare</li>
-                </ul>            
+                </ul>                          
             </div>
             <Footer />
         </>
