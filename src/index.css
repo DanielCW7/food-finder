@@ -28,7 +28,8 @@ code {
   background-position: center;
 }
 
-.carrot-dark-orange { fill: #d48a00; }
-.carrot-light-orange { fill: #faa200; }
-.carrot-dark-green { fill: #048500; }
-.carrot-light-green { fill: #06ac00; }
+.overflow-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 12px;
+}

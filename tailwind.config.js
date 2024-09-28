@@ -5,8 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {      
-      aspectRatio: { 'comic': '2 / 3' },
-      backgroundImage: { 'placeholder-pattern': "url('/src/images/books.jpg')" },
+      color: { 'mint-green': '#56E9B6', 'burnt-orange': '#E98956', 'bubble-gum': '#E956D8' },
       minHeight: {
         '10h': '10vh',
         '20h': '20vh',
