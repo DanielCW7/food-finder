@@ -3,8 +3,10 @@ import Nav from "../components/sections/nav"
 import MinorHero from "../components/minorHero"
 import berries from "../images/berries.webp"
 import apples from "../images/apples.jpg"
+import { useEffect, useState } from "react"
 
 const Compare = () => {
+
     return (
         <>
             <Nav />
@@ -15,7 +17,6 @@ const Compare = () => {
                 </p>
 
                 <div className="flex gap-2 sticky top-16 bg-base-100 z-20 py-4 join">
-
 
                 {/* filter options */}
                 <div className="join flex w-full">
