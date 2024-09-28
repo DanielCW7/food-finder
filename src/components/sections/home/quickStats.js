@@ -1,8 +1,9 @@
 import { useState } from "react";
+import berries from "../../../images/berries.webp"
 
 const QuickStats = () => {
 
-    const sampleSize = [1,2,3,4,5,6,7,8,9,10,11,12]
+    const sampleSize = [1,1,1,1,1,1,1,1,1,1,1,1]
     const [isData, setData] = useState(sampleSize);
 
 
@@ -19,9 +20,18 @@ const QuickStats = () => {
                     <p> Get the nitty gritty details for any food, including both macro and micronutrients. </p>
                 </div>            
                 <div className="text-center">
-                    <svg className="max-w-64 mx-auto my-4" width="auto" height="auto" viewBox="0 0 720 472" fill="none">
-                        <path d="M719.999 211C719.999 339.958 440.322 472 241.499 472C42.6765 472 -0.000976562 339.958 -0.000976562 211C-0.000976562 82.0415 239.177 0 437.999 0C636.822 0 719.999 82.0415 719.999 211Z" fill="green"/>
-                    </svg>
+                    <div className="svg-container">
+                        <svg className="max-w-64 mx-auto my-4" width="auto" height="auto" viewBox="0 0 720 472" fill="none">
+                            <defs>
+                                <clipPath id="myClipPath" className="">
+                                    <path d="M719.999 211C719.999 339.958 440.322 472 241.499 472C42.6765 472 -0.000976562 339.958 -0.000976562 211C-0.000976562 82.0415 239.177 0 437.999 0C636.822 0 719.999 82.0415 719.999 211Z" />
+                                </clipPath>
+                            </defs>
+
+                            <image href={berries} className="w-full h-auto" fill="none" clip-path="url(#myClipPath)" />
+                        </svg>                       
+                    </div>
+
                     <p className="textxl"> Oranges </p>
                     <sub> calories </sub>
                     <div className="my-4">

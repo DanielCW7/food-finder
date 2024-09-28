@@ -2,7 +2,8 @@
 
 const Hero = () => {
     return (
-        <header className="bg-blue-100">
+        <header className="bg-blue-100 min-h-70h flex flex-col">
+            <div className=""></div>
             <div className="max-w-4xl m-auto p-8">
                 <h1 className="text-4xl text-center pb-4">Food Finder!</h1> 
                 <p className="text-center"> lorem ipsum text lorem ipsum text lorem ipsum text lorem ipsum text </p>   

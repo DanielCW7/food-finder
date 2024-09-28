@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* foodcard gray image overlay */
-.card.image-full:before {
-    /* @apply opacity-70; */
-}
