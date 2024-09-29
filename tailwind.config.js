@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,js}"
   ],
   theme: {
-    extend: {      
+    extend: {  
+      animation: {
+        'reverse': 'animation-direction: reverse',
+        'forwards': 'animation-direction: forwards'
+      },    
       colors: { 
         'mint': '#43D19F', 
         'burnt': '#E98956', 

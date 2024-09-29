@@ -49,3 +49,13 @@ code {
 .hero-gradient {
   background: linear-gradient(to bottom, #566CE9, #343C6D);
 }
+
+@keyframes toggle {
+  from {transform: translateX(-100%)}
+  to {transform: translateX(0%)}
+}
+
+.toggleSwitch{
+  animation: toggle .3s ease forwards;
+  animation-iteration-count: 1;
+}
