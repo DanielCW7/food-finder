@@ -5,10 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {      
-      color: { 
-        'mint-green': '#56E9B6', 
-        'burnt-orange': '#E98956', 
-        'bubble-gum': '#E956D8' 
+      colors: { 
+        'mint': '#43D19F', 
+        'burnt': '#E98956', 
+        'gum': '#E956D8',
+        'ocean': '#566CE9' 
       },
       minHeight: {
         '10h': '10vh',
@@ -92,6 +93,6 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: [""]
+    themes: ["cupcake"]
   }
 }

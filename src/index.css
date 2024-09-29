@@ -7,13 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
-  font-family: "Permanent Marker", cursive;
+h1, h2, h3, .alt-font {
+  font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-  
-  
+
+.alt-font-2 {
+  font-family: "Lilita One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -40,4 +44,8 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 12px;
+}
+
+.hero-gradient {
+  background: linear-gradient(to bottom, #566CE9, #343C6D);
 }

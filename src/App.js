@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-      <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Permanent+Marker&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&display=swap" rel="stylesheet"></link>
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/browse" element={<Browse />} />
