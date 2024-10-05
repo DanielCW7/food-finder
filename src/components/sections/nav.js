@@ -52,16 +52,22 @@ const Nav = () => {
 
     return (
         <nav className="">
-            <div className="py-4 px-8 border flex w-full justify-between m-auto">
+            <div className="hidden py-4 px-8 border md:flex w-full justify-between m-auto">
                 <div></div>
-                <ul className="flex gap-6">  
-                    <li onClick={toggle}>Home</li>
-                    <li> Browse </li>
-                    <li> Collections </li>
+                <ul id="desktop_nav" className="flex gap-6">  
+                    <a><li>Home</li></a>
+                    <a><li> Browse </li></a>
+                    <a><li> Collections </li></a>
                 </ul>
             </div>
 
+            
             {/* mobile nav */}
+            {/* <div> burger icon </div> */}
+            <svg onClick={toggle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-10 m-8 fixed right-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+
             <div id="mobile_nav" className={`disappear md:hidden fixed bg-base-100 w-full top-0 bottom-0 flex flex-col justify-between p-6`}>
                 <div onClick={toggle} className="cursor-pointer absolute right-6 top-6"> 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
