@@ -50,12 +50,31 @@ code {
   background: linear-gradient(to bottom, #566CE9, #343C6D);
 }
 
-@keyframes toggle {
-  from {transform: translateX(-100%)}
-  to {transform: translateX(0%)}
+.appear {
+  transform: translateX(0%);
 }
 
-.toggleSwitch{
-  animation: toggle .3s ease forwards;
-  animation-iteration-count: 1;
+.disappear {
+  transform: translateX(100%);
+}
+
+#mobile_nav {
+  transition: all ease .3s;
+}
+
+.menu-opt {
+  transition: cubic-bezier(.55,-0.04,.25,2.0) all .3s;
+  display: inline-block;
+}
+
+.menu-letter-up {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: .1s;
+}
+
+.menu-letter-down {
+  opacity: 0;
+  transform: translateY(12px);
+  transition-delay: 0s;
 }
