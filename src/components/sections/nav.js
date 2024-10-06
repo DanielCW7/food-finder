@@ -45,17 +45,12 @@ const Nav = () => {
      }
     }
 
-
-
-    
-
-
     return (
         <nav className="">
             <div className="hidden py-4 px-8 border md:flex w-full justify-between m-auto">
                 <div></div>
                 <ul id="desktop_nav" className="flex gap-6">  
-                    <a><li>Home</li></a>
+                    <a><li> Home </li></a>
                     <a><li> Browse </li></a>
                     <a><li> Collections </li></a>
                 </ul>
@@ -64,7 +59,7 @@ const Nav = () => {
             
             {/* mobile nav */}
             {/* <div> burger icon </div> */}
-            <svg onClick={toggle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-10 m-8 fixed right-0">
+            <svg onClick={toggle} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="fixed top-0 size-10 m-8 right-0">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
 
@@ -81,15 +76,15 @@ const Nav = () => {
                 {/* menu options */}
                 <div>
                     <ul className="flex flex-col gap-4">
-                        <li>
+                        <a href="/"><li>
                             <div className="alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">H</span>
                                 <span className="menu-opt menu-letter-down">o</span>    
                                 <span className="menu-opt menu-letter-down">m</span>    
                                 <span className="menu-opt menu-letter-down">e</span>    
                             </div>
-                        </li>
-                        <li>
+                        </li></a>
+                        <a href="/browse"><li>
                             <div className="alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">B</span>  
                                 <span className="menu-opt menu-letter-down">r</span>    
@@ -98,8 +93,8 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">s</span>    
                                 <span className="menu-opt menu-letter-down">e</span>      
                             </div>
-                        </li>
-                        <li>
+                        </li></a>
+                        <a href="/collections"><li>
                             <div className="list alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">C</span> 
                                 <span className="menu-opt menu-letter-down">o</span>    
@@ -112,13 +107,12 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">o</span>    
                                 <span className="menu-opt menu-letter-down">n</span>    
                                 <span className="menu-opt menu-letter-down">s</span>    
-   
                             </div>
-                            {/* <ul className="sub-list mt-4 ml-6">
-                                <li className=""> Liked foods </li>
-                                <li className=""> Meal Plans </li>
-                            </ul> */}
-                        </li>
+                            <ul className="sub-list mt-4 ml-6">
+                                <a href="/"><li className=""> Liked foods </li></a>
+                                <a href="/"><li className=""> Meal Plans </li></a>
+                            </ul>
+                        </li></a>
                     </ul>
                 </div>
 

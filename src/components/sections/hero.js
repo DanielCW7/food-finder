@@ -1,4 +1,3 @@
-import berries from '../../images/fruits.webp'
 
 const Hero = () => {
     return (

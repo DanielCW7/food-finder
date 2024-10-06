@@ -1,24 +1,19 @@
-import { useState } from "react";
-import oranges from "../../images/oranges.webp"
+// individual cards for food items
 
-const QuickStats = () => {
+import fruits from "../../images/fruits.webp"
+import { useEffect } from "react"
 
-    const sampleSize = [1,1,1,1,1,1,1,1,1,1,1,1]
-    const [isData, setData] = useState(sampleSize);
+const Card = ({props}) => {
 
+    const isData = [1,1,1,1,1,1,1,1,1]
+
+    useEffect(() => {
+        console.log(props)
+    }, [])
 
     return (
-        <section className="bg-base-200">
-            {/* divider */}
-            <svg className="bg-base-200" xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 3683 215" fill="none">
-                <path className="fill-base-100" d="M1079.5 134.151C694.764 -107.053 119.697 346.196 -0.000976562 -0.000274658L2906.06 -0.000274658L3683 -0.000274658C3264.3 -0.000274658 1464.23 375.355 1079.5 134.151Z" fill=""/>
-            </svg>
-
-            <div className="m-auto max-w-4xl flex flex-col md:flex-row gap-8 p-8">
-                <div className="text-center m-auto">
-                    <h2 className="text-xl mb-6"> Food For Thought. </h2>
-                    <p> Get the nitty gritty details for any food, including both macro and micronutrients. </p>
-                </div>            
+        <div className="shadow-xl max-w-md m-auto bg-base-100">
+            <div className="m-auto max-w-4xl flex flex-col md:flex-row gap-8 p-8">           
                 <div className="text-center m-auto">
                     <div className="svg-container">
                         <svg className="max-w-64 mx-auto my-4" width="" height="" viewBox="0 0 720 472" fill="none">
@@ -28,7 +23,7 @@ const QuickStats = () => {
                                 </clipPath>
                             </defs>
 
-                            <image href={oranges} className="w-full h-auto" fill="none" clip-path="url(#myClipPath)" />
+                            <image href={fruits} className="w-full h-auto" fill="none" clip-path="url(#myClipPath)" />
                         </svg>                       
                     </div>
 
@@ -67,9 +62,8 @@ const QuickStats = () => {
                     </div>
                 </div>                
             </div>
- 
-        </section>
+         </div>
     )
 }
 
-export default QuickStats
+export default Card
