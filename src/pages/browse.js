@@ -12,7 +12,7 @@ const Browse = () => {
         <>
             <Nav />
 
-            <section className="bg-base-300 min-h-72 p-8 flex">
+            <section className="bg-base-300 min-h-72  pt-32 p-8 flex">
                 {/* hero search */}
                 <div className="m-auto w-full max-w-xl">
                     {/* searchbar */}
@@ -27,7 +27,7 @@ const Browse = () => {
             </section>
             <section className="bg-red-200">
                 {/* collection of items, populated via search results */}
-                <div className="grid md:grid-template-3">
+                <div className="place-self-start grid md:grid-cols-3">
                     <Card />
                     <Card />
                     <Card />
