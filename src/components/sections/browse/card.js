@@ -12,7 +12,7 @@ const Card = ({props}) => {
     }, [])
 
     return (
-        <div className="border border-blue-600 m-auto bg-base-100">
+        <div className="rounded-xl m-auto">
             <div className="m-auto max-w-4xl flex flex-col md:flex-row gap-8 p-8">           
                 <div className="text-center m-auto">
                     <div className="svg-container">

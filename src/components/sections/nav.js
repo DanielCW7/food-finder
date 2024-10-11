@@ -47,13 +47,14 @@ const Nav = () => {
 
     return (
         <nav className="z-50">
-            <div className="hidden py-4 px-8 border md:flex w-full justify-between m-auto">
+            <div className="hidden py-4 px-8 md:flex w-full justify-between m-auto transition-all shadow-2xl bg-base-100">
                 <div></div>
-                <ul id="desktop_nav" className="flex gap-6">  
-                    <a><li> Home </li></a>
-                    <a><li> Browse </li></a>
-                    <a><li> Collections </li></a>
-                    <a><li> Profile </li></a>
+                <ul id="desktop_nav" className="flex gap-6 place-items-center">  
+                    <a href="/"><li> Home </li></a>
+                    <a href="/browse"><li> Browse </li></a>
+                    <a href="/collections"><li> Collections </li></a>
+                    <a href="/profile"><li> Profile </li></a>
+                    <button className="btn btn-primary"> Log in </button>
                 </ul>
             </div>
 
