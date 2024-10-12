@@ -1,12 +1,33 @@
 import Nav from "../components/sections/nav";
 import Footer from "../components/footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/sections/browse/card";
 
 const Browse = () => {
 
     const [isResults, setResults] = useState([]);
 
+    useEffect(() => {
+        try {
+            fetch("http://localhost:3000/food")
+            .then(res => res.json())
+            .then(res => {
+                const arr = Array.from(res)
+                setResults(arr)
+            })
+            
+        } catch (err) {
+            console.error(err)
+        }
+    }, [])
+
+    function populate(params) {
+        console.log(params)
+        const foods = params.map(food => {
+            return <Card props={food}/>
+        })
+        return foods
+    }
 
     return (
         <>
@@ -72,14 +93,13 @@ const Browse = () => {
                     </div> 
 
 
-                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-max">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-max p-8">
+                        {
+                            isResults ? populate(isResults) : null
+                        }
                     </div>
+                    <div className="m-auto mb-4"> showing 0 of 0 results </div>
+
                     <div className="m-auto join">
                         <input
                             className="join-item btn btn-square"

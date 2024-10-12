@@ -5,52 +5,46 @@ import { useEffect } from "react"
 
 const Card = ({props}) => {
 
-    const isData = [1,1,1,1,1,1,1,1,1]
-
-    useEffect(() => {
-        console.log(props)
-    }, [])
+    console.log(props)
 
     return (
-        <div className="rounded-xl">
-            <div className="m-auto flex flex-col md:flex-row gap-8 p-8">           
+        <div className="rounded-xl shadow overflow-hidden">
+            <div className="m-auto flex flex-col md:flex-row gap-8">           
                 <div className="text-center m-auto">
 
-
-                    <div className="svg-container">
+                    <div className="max-w-sm sm:max-w-64">
                         {/* food thumbnail */}
-                        <svg className="max-w-64 mx-auto my-4" width="" height="" viewBox="-10 0 740 472" fill="none">
-                            <defs>
+                        {/* <svg className="max-w-64 mx-auto my-4" width="" height="" viewBox="-10 0 740 472" fill="none"> */}
+                            {/* <defs>
                                 <clipPath id="myClipPath" className="">
                                     <path d="M719.999 211C719.999 339.958 440.322 472 241.499 472C42.6765 472 -0.000976562 339.958 -0.000976562 211C-0.000976562 82.0415 239.177 0 437.999 0C636.822 0 719.999 82.0415 719.999 211Z" />
                                 </clipPath>
-                            </defs>
+                            </defs> */}
+                        <img src={props?.food_image ?? "err"} className="img-reset border w-full" />
+                        {/* </svg>  */}
 
-                            <image href={oranges} className="w-full h-auto" fill="none" clip-path="url(#myClipPath)" />
-                        </svg> 
-
-                        <div className="">
+                        <div className="p-2">
                             {/* name, stats */}
-                            <p className="text-xl alt-font"> Oranges </p>
+                            <p className="text-xl alt-font"> {props?.food_name ?? "Err"} </p>
                             <sub> calories </sub>
                             <div className="my-4">
                                 <ul className="flex justify-around">
                                     <li>
-                                        <span className="alt-font-2 text-2xl text-mint"> 23g </span>
+                                        <span className="alt-font-2 text-2xl text-mint"> {props?.proteins ?? "?"} </span>
                                         <p> Proteins </p>
                                     </li>
                                     <li>
-                                        <span className="alt-font-2 text-2xl text-gum"> 10g </span>
+                                        <span className="alt-font-2 text-2xl text-gum"> {props?.fats ?? "?"} </span>
                                         <p> Fats </p>
                                     </li>
                                     <li>
-                                        <span className="alt-font-2 text-2xl text-burnt"> 9g </span>
+                                        <span className="alt-font-2 text-2xl text-burnt"> {props?.carbs ?? "?"} </span>
                                         <p> Carbs </p>
                                     </li>
                                 </ul>
                             </div> 
 
-                            <div className="flex justify-center gap-2">
+                            <div className="flex justify-center gap-2 p-2">
                                 <button className="btn btn-primary btn-sm btn-outline">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
