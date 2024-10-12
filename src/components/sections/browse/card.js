@@ -12,7 +12,7 @@ const Card = ({props}) => {
     }, [])
 
     return (
-        <div className="rounded-xl m-auto shadow">
+        <div className="rounded-xl">
             <div className="m-auto flex flex-col md:flex-row gap-8 p-8">           
                 <div className="text-center m-auto">
 

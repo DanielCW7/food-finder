@@ -72,7 +72,7 @@ const Browse = () => {
                     </div> 
 
 
-                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 w-max">
+                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-max">
                         <Card />
                         <Card />
                         <Card />
@@ -80,7 +80,17 @@ const Browse = () => {
                         <Card />
                         <Card />
                     </div>
-
+                    <div className="m-auto join">
+                        <input
+                            className="join-item btn btn-square"
+                            type="radio"
+                            name="options"
+                            aria-label="1"
+                         />
+                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="..." />
+                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="25" />
+                    </div>
             </section>
             <Footer />
         </>
