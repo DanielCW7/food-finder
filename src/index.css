@@ -82,12 +82,3 @@ code {
   transform: translateY(12px);
   transition-delay: 0s;
 }
-
-.filter-list li {
-  align-items: center;
-  gap: 8px;
-  display: flex;
-  flex-flow: nowrap;
-  margin: 4px 0px;
-  font-size: .8rem;
-}

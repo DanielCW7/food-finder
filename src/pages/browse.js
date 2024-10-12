@@ -25,50 +25,54 @@ const Browse = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-base-100 flex flex-col sm:flex-row justify-center">
+            <section className="bg-base-100 flex flex-col">
                     <div className="p-4">
-                        <form className="border p-4 flex flex-col gap-4">
-                            <ul className="filter-list">
-                                <li>
-                                    <input className="radio" type="radio" for="fruits" />
-                                    <label name="fruits"> Fruits </label>
-                                </li>
-                                <li>
-                                    <input className="radio" type="radio"  for="meats" />
-                                    <label name="fruits"> Starches </label>
-                                </li>
-                                <li>
-                                    <input className="radio" type="radio"  for="meats" />
-                                    <label name="fruits"> Meats </label>
-                                </li>
-                                <li>
-                                    <input className="radio" type="radio"  for="meats" />
-                                    <label name="fruits"> Vegetables </label>
-                                </li>
-                                <li>
-                                    <input className="radio" type="radio"  for="meats" />
-                                    <label name="fruits"> Nuts </label>
-                                </li>
-                            </ul>  
-                            <hr/>
-                            <ul className="filter-list">
-                                <li>
-                                    <input className="radio" type="radio" for="fruits" />
-                                    <label name="fruits"> High to low </label>
-                                </li>
-                                <li>
-                                    <input className="radio" type="radio"  for="meats" />
-                                    <label name="fruits"> Low to high </label>
-                                </li>
+                        <form className="flex flex-col justify-center">
+                           
+                           <div className="p-4 flex flex-col sm:flex-row gap-2 sm:m-auto">
+                            <div className="flex flex-col">
+                                    <label> Only Show: </label>
+                                    <select className="select select-sm select-primary w-full">
+                                        <option disabled selected> Food Type </option>
+                                        <option> None </option>
+                                        <option> Vegetables </option>
+                                        <option> Meats </option>
+                                        <option> Starches </option>
+                                        <option> Nuts </option>
+                                    </select>                            
+                            </div>
 
-                            </ul>
-                            <button className="btn"> Filter </button>                          
+                            <div className="flex flex-col">
+                                    <label> Focus On: </label>
+                                    <select className="select select-sm select-primary w-full">
+                                        <option disabled selected> Macronutrients </option>
+                                        <option> None </option>
+                                        <option> Proteins </option>
+                                        <option> Fats </option>
+                                        <option> Carbohydrates </option>
+                                    </select>                                
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <label> Arrange from: </label>
+                                    <select className="select select-sm select-primary w-full">
+                                        <option disabled selected> Nutrient Quantity </option>
+                                        <option> None </option>
+                                        <option> High to low </option>
+                                        <option> Low to High </option>
+                                    </select>                            
+                                </div>                             
+                           </div>
+     
+
+
+                            <button className="btn btn-sm btn-wide m-auto"> Sort </button>                          
                         </form>
 
                     </div> 
 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 w-max">
+                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 w-max">
                         <Card />
                         <Card />
                         <Card />
@@ -76,9 +80,6 @@ const Browse = () => {
                         <Card />
                         <Card />
                     </div>
-
-
-                    <div> {/* for positioning */} </div>
 
             </section>
             <Footer />
