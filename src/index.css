@@ -40,10 +40,14 @@ code {
   background-position: center;
 }
 
-.overflow-list {
+.card-expanded-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 12px;
+}
+
+.modal-box {
+  color: #000;
 }
 
 .hero-gradient {

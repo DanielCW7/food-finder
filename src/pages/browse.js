@@ -52,32 +52,45 @@ const Browse = () => {
                            
                            <div className="p-4 flex flex-col sm:flex-row gap-2 sm:m-auto">
                             <div className="flex flex-col">
-                                    <label> Only Show: </label>
+                                    <label> Only show: </label>
                                     <select className="select select-sm select-primary w-full">
                                         <option disabled selected> Food Type </option>
                                         <option> None </option>
+                                        <option> Fruits </option>
                                         <option> Vegetables </option>
                                         <option> Meats </option>
                                         <option> Starches </option>
                                         <option> Nuts </option>
+                                        <option> Legumes </option>
                                     </select>                            
                             </div>
 
                             <div className="flex flex-col">
-                                    <label> Focus On: </label>
+                                    <label> Focus on: </label>
                                     <select className="select select-sm select-primary w-full">
-                                        <option disabled selected> Macronutrients </option>
+                                        <option disabled selected> Nutrients </option>
                                         <option> None </option>
                                         <option> Proteins </option>
                                         <option> Fats </option>
                                         <option> Carbohydrates </option>
+                                        <option> Calories </option>
+                                        <option> Cholesterol </option>
+                                        <option> Fiber </option>
+                                        <option> Vitamin A </option>
+                                        <option> Vitamin B2 </option>
+                                        <option> Vitamin B6 </option>
+                                        <option> Vitamin B12 </option>
+                                        <option> Vitamin C </option>
+                                        <option> Vitamin D </option>
+                                        <option> Vitamin E </option>
+                                        <option> Vitamin K </option>
                                     </select>                                
                                 </div>
 
                                 <div className="flex flex-col">
-                                    <label> Arrange from: </label>
+                                    <label> Arrange by: </label>
                                     <select className="select select-sm select-primary w-full">
-                                        <option disabled selected> Nutrient Quantity </option>
+                                        <option disabled selected> Nutrients </option>
                                         <option> None </option>
                                         <option> High to low </option>
                                         <option> Low to High </option>
@@ -98,7 +111,7 @@ const Browse = () => {
                             isResults ? populate(isResults) : null
                         }
                     </div>
-                    <div className="m-auto mb-4"> showing 0 of 0 results </div>
+                    <div className="m-auto mb-4"> {isResults.length} results </div>
 
                     <div className="m-auto join">
                         <input

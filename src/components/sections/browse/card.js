@@ -13,20 +13,13 @@ const Card = ({props}) => {
                 <div className="text-center m-auto">
 
                     <div className="max-w-sm sm:max-w-64">
-                        {/* food thumbnail */}
-                        {/* <svg className="max-w-64 mx-auto my-4" width="" height="" viewBox="-10 0 740 472" fill="none"> */}
-                            {/* <defs>
-                                <clipPath id="myClipPath" className="">
-                                    <path d="M719.999 211C719.999 339.958 440.322 472 241.499 472C42.6765 472 -0.000976562 339.958 -0.000976562 211C-0.000976562 82.0415 239.177 0 437.999 0C636.822 0 719.999 82.0415 719.999 211Z" />
-                                </clipPath>
-                            </defs> */}
                         <img src={props?.food_image ?? "err"} className="img-reset border w-full" />
                         {/* </svg>  */}
 
                         <div className="p-2">
                             {/* name, stats */}
                             <p className="text-xl alt-font"> {props?.food_name ?? "Err"} </p>
-                            <sub> calories </sub>
+                            <sub> {props.calories} calories / 100g</sub>
                             <div className="my-4">
                                 <ul className="flex justify-around">
                                     <li>
@@ -52,13 +45,45 @@ const Card = ({props}) => {
 
                                      Like 
                                 </button>                            
-                                <button className="btn btn-secondary btn-sm btn-outline"> 
+                                <button className="btn btn-secondary btn-sm btn-outline" onClick={() => document.getElementById(`food_card${props.food_name}`).showModal()}> 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                                     </svg>
 
                                     Info 
-                                </button>                                 
+                                </button> 
+                                {/* 
+                                    dynamic ID for modals, 
+                                    pass down food.ID prop so the modal will display correct info 
+                                */}
+                                <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
+                                    <div className="modal-box shadow-2xl" style={{
+                                        backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(${props.food_image})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                        backdropFilter: "blur(12px)",
+                                        WebkitBackdropFilter: "blur(8px)",
+                                    }}>
+                                        <h3 className="text-2xl shadow-lg"> {props.food_name} </h3>
+                                        <sub> Calories per 100g: {props.calories} </sub>
+                                        <sub> Type: {props.food_type} </sub>
+                                        <ul className="card-expanded-list">
+                                            <li>proteins - {props.proteins} </li>
+                                            <li>fats - {props.fats} </li>
+                                            <li>carbs - {props.carbs} </li>
+                                            <li>sat. fats - {props.saturated_fats} </li>
+                                            <li>cholesterol - {props.cholesterol} </li>
+                                            <li>fiber - {props.fiber}</li>
+                                            <li>vitamin A - {props.vitamin_A}</li>
+                                            <li>vitamin B12 - {props.vitamin_B12}</li>
+                                            <li>vitamin C - {props.vitamin_C}</li>
+                                            <li>vitamin D - {props.vitamin_D}</li>
+                                        </ul>
+                                    </div>
+                                    <form method="dialog" className="modal-backdrop">
+                                        <button>close</button>
+                                    </form>
+                                </dialog>                                
                             </div>
                            
 
