@@ -1,8 +1,5 @@
 // individual cards for food items
 
-import oranges from "../../images/oranges.webp"
-import { useEffect } from "react"
-
 const Card = ({props}) => {
 
     console.log(props)
@@ -13,7 +10,7 @@ const Card = ({props}) => {
                 <div className="text-center m-auto">
 
                     <div className="max-w-sm sm:max-w-64">
-                        <img src={props?.food_image ?? "err"} className="img-reset border w-full" />
+                        <img src={props?.food_image ?? "err"} className="img-reset w-full" />
                         {/* </svg>  */}
 
                         <div className="p-2">
@@ -58,7 +55,7 @@ const Card = ({props}) => {
                                 */}
                                 <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
                                     <div className="modal-box shadow-2xl" style={{
-                                        backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(${props.food_image})`,
+                                        backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.9)), url(${props.food_image})`,
                                         backgroundSize: "cover",
                                         backgroundPosition: "center",
                                         backdropFilter: "blur(12px)",
@@ -78,7 +75,26 @@ const Card = ({props}) => {
                                             <li>vitamin B12 - {props.vitamin_B12}</li>
                                             <li>vitamin C - {props.vitamin_C}</li>
                                             <li>vitamin D - {props.vitamin_D}</li>
+                                            <li>proteins - {props.proteins} </li>
+                                            <li>fats - {props.fats} </li>
+                                            <li>carbs - {props.carbs} </li>
+                                            <li>sat. fats - {props.saturated_fats} </li>
+                                            <li>cholesterol - {props.cholesterol} </li>
+                                            <li>fiber - {props.fiber}</li>
+                                            <li>vitamin A - {props.vitamin_A}</li>
+                                            <li>vitamin B12 - {props.vitamin_B12}</li>
+                                            <li>vitamin C - {props.vitamin_C}</li>
+                                            <li>vitamin D - {props.vitamin_D}</li>
                                         </ul>
+                                        <div className="mt-4 flex justify-center gap-2">
+                                            <button className="btn btn-outline"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                            </svg>
+                                            Like </button>
+                                        </div>
+
+
                                     </div>
                                     <form method="dialog" className="modal-backdrop">
                                         <button>close</button>
