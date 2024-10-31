@@ -6,6 +6,10 @@ import Card from "../components/sections/browse/card";
 const Browse = () => {
 
     const [isResults, setResults] = useState([]);
+    const [currentPage, setPage] = useState(1);
+
+    const perPage = 15
+    const adjusted = perPage * currentPage;
 
     useEffect(() => {
         try {
@@ -22,10 +26,13 @@ const Browse = () => {
     }, [])
 
     function populate(params) {
-        console.log(params)
-        const foods = params.map(food => {
-            return <Card props={food}/>
-        })
+        console.log(isResults.length / perPage)
+
+        // foods sliced out of results array based on page value
+        let reduced = isResults.slice(adjusted - perPage, adjusted)
+        
+        const foods = reduced.map(food => <Card props={food} />)            
+
         return foods
     }
 
@@ -46,7 +53,8 @@ const Browse = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-base-100 flex flex-col">
+            
+            <section className="bg-base-100 flex flex-col" id="search_results">
                     <div className="p-4">
                         <form className="flex flex-col justify-center">
                            
@@ -102,27 +110,48 @@ const Browse = () => {
 
                             <button className="btn btn-sm btn-wide m-auto"> Sort </button>                          
                         </form>
-
                     </div> 
+                {
+                    isResults.length > 0 ?
+                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
+                        {populate(isResults)}                 
+                    </div> :
+                    <div className="p-8 my-8">
+                        <div className="">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10 m-auto">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                            </svg>
+
+                            <h2 className="text-2xl text-center"> No Results...  </h2>
+                            <p className="text-sm text-center"> try broadening your search. </p>
+                        </div>  
+                    </div>                                       
+                }
 
 
-                    <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-max p-8">
-                        {
-                            isResults ? populate(isResults) : null
-                        }
+
+
+                    <div className="m-auto mb-8 flex flex-col text-center gap-2"> 
+                        <span> Page {currentPage}  </span>
+                        <sub> ({isResults.length} results)  </sub>
                     </div>
-                    <div className="m-auto mb-4"> {isResults.length} results </div>
 
                     <div className="m-auto join">
+                        {/* 15 results per page */}
                         <input
-                            className="join-item btn btn-square"
+                            className={`join-item btn ${currentPage < 2 ? "btn-disabled" : null}`}
                             type="radio"
                             name="options"
-                            aria-label="1"
-                         />
-                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" />
-                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="..." />
-                        <input className="join-item btn btn-square" type="radio" name="options" aria-label="25" />
+                            aria-label="Previous"
+                            onClick={() => setPage(currentPage - 1)}
+                        />
+                        <input 
+                            className={`join-item btn ${(isResults.length / perPage) < (currentPage) && "btn-disabled"}`}
+                            type="radio" 
+                            name="options" 
+                            aria-label={"Next"} 
+                            onClick={() => setPage(currentPage + 1)} 
+                        />
                     </div>
             </section>
             <Footer />

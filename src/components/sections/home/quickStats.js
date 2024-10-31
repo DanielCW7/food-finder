@@ -37,32 +37,17 @@ const QuickStats = () => {
                     <div className="my-4">
                         <ul className="flex justify-around">
                             <li>
-                                <span className="alt-font text-2xl text-mint"> 23g </span>
+                                <span className="alt-font-2 text-2xl text-mint"> 23g </span>
                                 <p> Proteins </p>
                             </li>
                             <li>
-                                <span className="alt-font text-2xl text-gum"> 10g </span>
+                                <span className="alt-font-2 text-2xl text-gum"> 10g </span>
                                 <p> Fats </p>
                             </li>
                             <li>
-                                <span className="alt-font text-2xl text-burnt"> 9g </span>
+                                <span className="alt-font-2 text-2xl text-burnt"> 9g </span>
                                 <p> Carbs </p>
                             </li>
-                        </ul>
-                    </div>
-                    <div>
-                        {/* extra nutrients */}
-                        {/* hardcoded, to be dynamically populated */}
-
-                        <ul className="overflow-list gap-x-8">
-                            {
-                                isData && isData.map(stat => {
-                                    return  <li className="text-xs flex justify-center gap-2 my-1">
-                                                <span> 23g </span>
-                                                <p> Proteins </p>
-                                            </li> 
-                                })
-                            }                            
                         </ul>
                     </div>
                 </div>                

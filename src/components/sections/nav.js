@@ -46,13 +46,13 @@ const Nav = () => {
     }
 
     return (
-        <nav className="z-50">
+        <nav>
             <div className="hidden py-4 px-8 md:flex w-full justify-between m-auto transition-all shadow-2xl bg-base-100">
                 <div></div>
                 <ul id="desktop_nav" className="flex gap-6 place-items-center">  
                     <a href="/"><li> Home </li></a>
                     <a href="/browse"><li> Browse </li></a>
-                    <a href="/collections"><li> Collections </li></a>
+                    <a href=""><li> Collections </li></a>
                     <a href="/profile"><li> Profile </li></a>
                     <button className="btn btn-primary"> Log in </button>
                 </ul>
@@ -96,7 +96,7 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">e</span>      
                             </div>
                         </li></a>
-                        <a href="/collections"><li>
+                        <a><li>
                             <div className="list alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">C</span> 
                                 <span className="menu-opt menu-letter-down">o</span>    
@@ -110,11 +110,6 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">n</span>    
                                 <span className="menu-opt menu-letter-down">s</span>    
                             </div>
-                            <ul className="sub-list mt-4 ml-6">
-                                <span> *arrow* </span>
-                                <a href="/"><li className=""> Liked foods </li></a>
-                                <a href="/"><li className=""> Meal Plans </li></a>
-                            </ul>
                         </li></a>
                         <a href="/browse"><li>
                             <div className="alt-font text-5xl">
