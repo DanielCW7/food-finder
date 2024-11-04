@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Card from "./card";
 
 
 const Results = () => {
 
     const [isResults, setResults] = useState([]);
-    const [isFiltered, setFilter] = useState([])
+    const [isFiltered, setFilter] = useState([]);
     const [currentPage, setPage] = useState(1);
+    const scrollRef = useRef(null);
 
     const perPage = 16
     const adjusted = perPage * currentPage;
@@ -25,6 +26,11 @@ const Results = () => {
             console.error(err)
         }
     }, [])
+
+    // scroll upward when a new page is requested
+    const scrollTop = () => {
+        scrollRef.current && scrollRef.current.scrollIntoView({behavior: 'smooth', block: 'start'})
+    }
 
     // creating cards from results
     function populate(params) {
@@ -51,7 +57,7 @@ const Results = () => {
 
     return (
         <section className="bg-base-100 flex flex-col" id="search_results">
-            <div className="p-4">
+            <div className="p-4" ref={scrollRef}>
                 <form className="flex flex-col justify-center" onSubmit={filter}>
                 
                     <div className="p-4 flex flex-row gap-2 m-auto">
@@ -138,14 +144,20 @@ const Results = () => {
                     type="radio"
                     name="options"
                     aria-label="Previous"
-                    onClick={() => setPage(currentPage - 1)}
+                    onClick={() => {
+                        setPage(currentPage - 1);
+                        scrollTop()
+                    }}
                 />
                 <input 
                     className={`join-item btn ${(isResults.length / perPage) < (currentPage) && "btn-disabled"}`}
                     type="radio" 
                     name="options" 
                     aria-label={"Next"} 
-                    onClick={() => setPage(currentPage + 1)} 
+                    onClick={() => {
+                        setPage(currentPage + 1)
+                        scrollTop()
+                    }} 
                 />
             </div>
         </section>
