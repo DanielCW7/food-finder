@@ -7,10 +7,10 @@ const Hero = () => {
             <div className="max-w-4xl m-auto p-8">
                 <h1 className="text-4xl text-center pb-4 text-base-100">Food Finder!</h1> 
                 <p className="text-center text-base-200"> lorem ipsum text lorem ipsum text lorem ipsum text lorem ipsum text </p>   
-                <div className="flex gap-2 justify-center pt-4">
+                {/* <div className="flex gap-2 justify-center pt-4">
                     <button className="btn btn-primary"> Sign Up </button>
                     <button className="btn"> Sign In </button>
-                </div>            
+                </div>             */}
             </div>
 
             {/* divider */}

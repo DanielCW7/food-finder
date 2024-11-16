@@ -2,7 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import Card from "./card";
 
 
-const Results = () => {
+const Results = (search) => {
+
+    // if query is present, request from db
+    console.log(search.query)
 
     const [isResults, setResults] = useState([]);
     const [isFiltered, setFilter] = useState([]);
@@ -12,30 +15,45 @@ const Results = () => {
     const perPage = 16
     const adjusted = perPage * currentPage;
 
+    function getAll() {
+        fetch("http://localhost:3000/food")
+        .then(res => res.json())
+        .then(res => {
+            const arr = Array.from(res)
+            setResults(arr)
+            setFilter(arr)
+        })    
+    }
+
+    function getCertain(food) {
+        fetch(`http://localhost:3000/food/${food}`)
+        .then(res => res.json())
+        .then(res => {
+            const arr = Array.from(res)
+            setFilter(arr)
+        })    
+    }
+
     useEffect(() => {
+        console.log(search)
         try {
-            fetch("http://localhost:3000/food")
-            .then(res => res.json())
-            .then(res => {
-                const arr = Array.from(res)
-                setResults(arr)
-                setFilter(arr)
-            })
-            
+            if(search === "") {
+                getAll()
+            } else {
+                getAll()  
+            }
         } catch (err) {
             console.error(err)
         }
-    }, [])
+    }, [search])
 
     // scroll upward when a new page is requested
-    const scrollTop = () => {
-        scrollRef.current && scrollRef.current.scrollIntoView({behavior: 'smooth', block: 'start'})
-    }
+    const scrollTop = () => scrollRef.current && scrollRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
 
     // creating cards from results
     function populate(params) {
         let reduced = params.slice(adjusted - perPage, adjusted)
-        const foods = reduced.map(food => <Card props={food} />)            
+        const foods = reduced.map(food => <Card props={food} key={food.food_name}/>)            
         return foods
     }
 
@@ -52,6 +70,7 @@ const Results = () => {
         const mod = []
         isResults.map(e => {
             // test the food item within the given params
+            // console.log(e)
         })
     }
 
@@ -64,7 +83,7 @@ const Results = () => {
                         <div className="flex flex-col">
                             <label> Only show: </label>
                             <select className="select select-sm select-primary w-full">
-                                <option disabled selected> Food Type </option>
+                                <option disabled defaultValue> Food Type </option>
                                 <option value={null}> All foods </option>
                                 <option value="Fruits"> Fruits </option>
                                 <option value="Vegetables"> Vegetables </option>
@@ -78,7 +97,7 @@ const Results = () => {
                         <div className="flex flex-col">
                             <label> Focusing on: </label>
                             <select className="select select-sm select-primary w-full">
-                                <option disabled selected> Nutrients </option>
+                                <option disabled defaultValue> Nutrients </option>
                                 <option value={null}> All nutrients </option>
                                 <option value="Protein"> Protein </option>
                                 <option value="Fat"> Fat </option>
@@ -100,7 +119,7 @@ const Results = () => {
                         <div className="flex flex-col">
                             <label> Sort by: </label>
                             <select className="select select-sm select-primary w-full">
-                                <option disabled selected> Nutrients </option>
+                                <option disabled defaultValue> Nutrients </option>
                                 <option value={null}> None </option>
                                 <option value="H2L"> High to low </option>
                                 <option value="L2H"> Low to High </option>
@@ -112,6 +131,10 @@ const Results = () => {
                     <button className="btn btn-sm btn-wide m-auto"> Sort </button>                          
                 </form>
             </div> 
+            <div className="m-auto mb-8 flex flex-row gap-2"> 
+                <span> Page {currentPage}  </span>
+                <sub> <div className={`badge ${(isResults.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isResults.length}</div> results </sub>
+            </div>
         {
             isResults.length > 0 ?
             <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
@@ -129,12 +152,9 @@ const Results = () => {
             </div>                                       
         }
 
-
-
-
-            <div className="m-auto mb-8 flex flex-col text-center gap-2"> 
+            <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>
-                <sub> ({isResults.length} results)  </sub>
+                <sub> <div className={`badge ${(isResults.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isResults.length}</div> results </sub>
             </div>
 
             <div className="m-auto join">

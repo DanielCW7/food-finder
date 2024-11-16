@@ -52,9 +52,6 @@ const Nav = () => {
                 <ul id="desktop_nav" className="flex gap-6 place-items-center">  
                     <a href="/"><li> Home </li></a>
                     <a href="/browse"><li> Browse </li></a>
-                    <a href=""><li> Collections </li></a>
-                    <a href="/profile"><li> Profile </li></a>
-                    <button className="btn btn-primary"> Log in </button>
                 </ul>
             </div>
 
@@ -78,7 +75,7 @@ const Nav = () => {
                 {/* menu options */}
                 <div>
                     <ul className="flex flex-col gap-4">
-                        <a href="/"><li>
+                        <a href="/"><li className="text-center">
                             <div className="alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">H</span>
                                 <span className="menu-opt menu-letter-down">o</span>    
@@ -86,7 +83,7 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">e</span>    
                             </div>
                         </li></a>
-                        <a href="/browse"><li>
+                        <a href="/browse"><li className="text-center">
                             <div className="alt-font text-5xl">
                                 <span className="menu-opt menu-letter-down">B</span>  
                                 <span className="menu-opt menu-letter-down">r</span>    
@@ -96,40 +93,15 @@ const Nav = () => {
                                 <span className="menu-opt menu-letter-down">e</span>      
                             </div>
                         </li></a>
-                        <a><li>
-                            <div className="list alt-font text-5xl">
-                                <span className="menu-opt menu-letter-down">C</span> 
-                                <span className="menu-opt menu-letter-down">o</span>    
-                                <span className="menu-opt menu-letter-down">l</span>    
-                                <span className="menu-opt menu-letter-down">l</span>    
-                                <span className="menu-opt menu-letter-down">e</span>    
-                                <span className="menu-opt menu-letter-down">c</span>    
-                                <span className="menu-opt menu-letter-down">t</span>    
-                                <span className="menu-opt menu-letter-down">i</span>    
-                                <span className="menu-opt menu-letter-down">o</span>    
-                                <span className="menu-opt menu-letter-down">n</span>    
-                                <span className="menu-opt menu-letter-down">s</span>    
-                            </div>
-                        </li></a>
-                        <a href="/browse"><li>
-                            <div className="alt-font text-5xl">
-                                <span className="menu-opt menu-letter-down">P</span>  
-                                <span className="menu-opt menu-letter-down">r</span>    
-                                <span className="menu-opt menu-letter-down">o</span>    
-                                <span className="menu-opt menu-letter-down">f</span>    
-                                <span className="menu-opt menu-letter-down">i</span>    
-                                <span className="menu-opt menu-letter-down">l</span> 
-                                <span className="menu-opt menu-letter-down">e</span>           
-                            </div>
-                        </li></a>
                     </ul>
                 </div>
 
+                <div></div>
                 {/* buttons */}
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                     <button className="btn btn-full btn-primary"> Log In </button>
                     <button className="btn btn-full"> Sign Up </button>
-                </div>                
+                </div> */}
             </div>
 
         </nav>

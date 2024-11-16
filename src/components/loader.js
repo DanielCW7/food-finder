@@ -1,7 +1,11 @@
 // skeleton card loader
 
-export default function Loader() {
+const Loader = () => {
     return (
-        <span className="loading loading-dots loading-lg"></span>
+        <div className="loading loading-dots loading-lg">
+            loading ... 
+        </div>
     )
 }
+
+export default Loader

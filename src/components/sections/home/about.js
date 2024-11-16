@@ -37,6 +37,8 @@ const About = () => {
                         </div>
 
                         <p> Easily create a free account and start planning your meals today. </p>
+                        <div className="badge badge-secondary badge-outline"> Coming soon! </div>
+
                     </div>                    
                 </div>
 

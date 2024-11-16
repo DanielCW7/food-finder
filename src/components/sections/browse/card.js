@@ -1,6 +1,5 @@
 // individual cards for food items
-import { useEffect } from "react"
-import Loader from "../../loader"
+import { useEffect } from "react";
 
 const Card = ({props}) => {
 
@@ -10,13 +9,12 @@ const Card = ({props}) => {
                     <div className="text-center m-auto">
 
                         <div className="max-w-sm sm:max-w-64">
-                            <img src={props?.food_image ?? "?"} className="img-reset w-full" />
-                            {/* </svg>  */}
+                            <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-full" />
 
                             <div className="p-2">
                                 {/* name, stats */}
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} calories / 100g</sub>
+                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100g </sub>
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
