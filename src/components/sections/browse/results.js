@@ -4,11 +4,9 @@ import Card from "./card";
 
 const Results = (search) => {
 
-    // if query is present, request from db
-    console.log(search.query)
+    console.log(search)
 
     const [isResults, setResults] = useState([]);
-    const [isFiltered, setFilter] = useState([]);
     const [currentPage, setPage] = useState(1);
     const scrollRef = useRef(null);
 
@@ -21,16 +19,16 @@ const Results = (search) => {
         .then(res => {
             const arr = Array.from(res)
             setResults(arr)
-            setFilter(arr)
         })    
     }
 
     function getCertain(food) {
+
         fetch(`http://localhost:3000/food/${food}`)
         .then(res => res.json())
         .then(res => {
             const arr = Array.from(res)
-            setFilter(arr)
+            setResults(arr)
         })    
     }
 
@@ -40,7 +38,7 @@ const Results = (search) => {
             if(search === "") {
                 getAll()
             } else {
-                getAll()  
+                getCertain(search.query)  
             }
         } catch (err) {
             console.error(err)
@@ -57,27 +55,10 @@ const Results = (search) => {
         return foods
     }
 
-    // filter search results based on params
-    function filter(p) {
-        p.preventDefault()
-        
-        // prep results fo filter by referencing original search results
-        setResults(isFiltered)
-        let food = p.target[0].value
-        let nutrient = p.target[1].value
-        let sort = p.target[2].value
-
-        const mod = []
-        isResults.map(e => {
-            // test the food item within the given params
-            // console.log(e)
-        })
-    }
-
     return (
         <section className="bg-base-100 flex flex-col" id="search_results">
             <div className="p-4" ref={scrollRef}>
-                <form className="flex flex-col justify-center" onSubmit={filter}>
+                <form className="flex flex-col justify-center">
                 
                     <div className="p-4 flex flex-row gap-2 m-auto">
                         <div className="flex flex-col">
@@ -138,7 +119,7 @@ const Results = (search) => {
         {
             isResults.length > 0 ?
             <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
-                {populate(isFiltered)}                 
+                {populate(isResults)}                 
             </div> :
             <div className="p-8 my-8">
                 <div className="">

@@ -8,7 +8,6 @@ const Nav = () => {
 
         const letters = document.getElementsByClassName("menu-opt");
         const nav = document.querySelector("#mobile_nav")        
-        console.log(nav, isToggled)
         
         swap(nav)
         isToggled && fancyAppear(letters)
