@@ -1,7 +1,32 @@
 // individual cards for food items
-import { useEffect } from "react";
+import { useState } from "react";
 
 const Card = ({props}) => {
+
+    // state for if conversions have been made
+    const [isConverted, setConvert] = useState(null)
+    const [isUnits, setUnits] = useState(null)
+
+    const convert = (measure) => {
+        const g_oz = measure * 0.035274;
+        const g_mg = measure * 1000;
+        const g_kg = measure * 0.001;
+        const g_lb = measure * 0.00220462;
+
+        const l_mg = measure * 1000;
+        const l_cup = measure * 4.16667;
+        const l_floz = measure * 33.814;
+        const l_tbs = measure * 67.628;
+        const l_tsp = measure * 202.884;
+
+        let entry = measure.target.value;
+   
+        try {
+            // switch case for different units based on state *********
+        } catch(err) {
+            console.error("err:", err)
+        }
+    }
 
     return (
             <div className="rounded-xl shadow overflow-hidden transition-all">
@@ -42,6 +67,7 @@ const Card = ({props}) => {
                                         Info 
                                     </button> 
 
+                                    {/* expanded card info */}
                                     <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
                                         <div className="modal-box shadow-2xl" style={{
                                             backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(${props.food_image})`,
@@ -51,32 +77,46 @@ const Card = ({props}) => {
                                             WebkitBackdropFilter: "blur(8px)",
                                         }}>
                                             <h3 className="text-2xl"> {props.food_name} </h3>
-                                            <sub> Calories per 100g: {props?.calories} </sub>
+
+                                            <div className="join">
+                                                <input className="join-item input" type="text" onChange={convert}/>
+                                                <select className="join-item">
+                                                    <option> {props.units = "liter" ? "ml" : "g"} </option>
+                                                    <option> {props.units = "liter" ? "l" : "g"} </option>
+                                                    <option> {props.units = "liter" ? "tsp" : "g"} </option>
+                                                    <option> {props.units = "liter" ? "tbsp" : "mg"} </option>
+                                                    <option> {props.units = "liter" ? "cup" : "kg"} </option>
+                                                    <option> {props.units = "liter" ? "fl oz" : "oz"} </option>
+                                                    <option> {props.units = "liter" ? "serving (xyz g)" : "serving (fill in)"} </option>
+                                                </select>                                                
+                                            </div>
+
+                                            <div> Calories: {props?.calories} </div>
                                             <sub> Type: {props?.food_type} </sub>
                                             <div> Macros </div>
                                             <ul className="flex justify-around gap-1">
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl border-2 border-mint">
-                                                    <span className="alt-font-2 text-2xl text-mint"> {props?.proteins ?? "?"} </span>
+                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
+                                                    <span className="alt-font-2 text-2xl text-mint"> {props?.proteins ?? "?"}{isUnits ? isUnits : ""} </span>
                                                     <p> Protein </p>
                                                 </li>
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl border-2 border-gum">
-                                                    <span className="alt-font-2 text-2xl text-gum"> {props?.fats ?? "?"} </span>
+                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
+                                                    <span className="alt-font-2 text-2xl text-gum"> {props?.fats ?? "?"}{isUnits ? isUnits : ""} </span>
                                                     <p> Fat </p>
                                                 </li>
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl border-2 border-burnt">
-                                                    <span className="alt-font-2 text-2xl text-burnt"> {props?.carbs ?? "?"} </span>
+                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
+                                                    <span className="alt-font-2 text-2xl text-burnt"> {props?.carbs ?? "?"}{isUnits ? isUnits : ""} </span>
                                                     <p> Carbs </p>
                                                 </li>
                                             </ul>
                                             <div> Micros </div>
                                             <ul className="card-expanded-list">
-                                                <li>sat. fats: <b>{props?.saturated_fats ?? "?"}</b> </li>
-                                                <li>cholesterol: <b>{props?.cholesterol ?? "?"}</b> </li>
-                                                <li>fiber: <b>{props?.fiber ?? "?"}</b></li>
-                                                <li>vitamin A: <b>{props?.vitamin_A ?? "?"}</b></li>
-                                                <li>vitamin B12: <b>{props?.vitamin_B12 ?? "?"}</b></li>
-                                                <li>vitamin C: <b>{props?.vitamin_C ?? "?"}</b></li>
-                                                <li>vitamin D: <b>{props?.vitamin_D ?? "?"}</b></li>
+                                                <li>Sat. fats: <b>{props?.saturated_fats ?? "?"}</b> </li>
+                                                <li>Cholesterol: <b>{props?.cholesterol ?? "?"}</b> </li>
+                                                <li>Fiber: <b>{props?.fiber ?? "?"}</b></li>
+                                                <li>Vitamin A: <b>{props?.vitamin_A ?? "?"}</b></li>
+                                                <li>Vitamin B12: <b>{props?.vitamin_B12 ?? "?"}</b></li>
+                                                <li>Vitamin C: <b>{props?.vitamin_C ?? "?"}</b></li>
+                                                <li>Vitamin D: <b>{props?.vitamin_D ?? "?"}</b></li>
                                             </ul>
                                         </div>
                                         <form method="dialog" className="modal-backdrop">
