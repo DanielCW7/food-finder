@@ -4,28 +4,37 @@ import { useState } from "react";
 const Card = ({props}) => {
 
     // state for if conversions have been made
-    const [isConverted, setConvert] = useState(null)
+    const [isEntry, setEntry] = useState(null)
     const [isUnits, setUnits] = useState(null)
 
+
+
+    const calculate = (amount) => {
+        let entry = amount.target.value;
+        let digit = Number(entry);
+
+        // based on a 2,000 calorie diet
+        // serving is how many grams?
+        const g_oz = digit * 0.035274;
+        const g_mg = digit * 1000;
+        const g_kg = digit * 0.001;
+        const g_lb = digit * 0.00220462;
+
+        // serving is how may liters?
+        const l_ml = digit * 1000;
+        const l_cup = digit * 4.16667;
+        const l_floz = digit * 33.814;
+        const l_tbs = digit * 67.628;
+        const l_tsp = digit * 202.884;
+
+        setEntry(digit)
+        console.log("you entered ", isEntry)
+    }
+
     const convert = (measure) => {
-        const g_oz = measure * 0.035274;
-        const g_mg = measure * 1000;
-        const g_kg = measure * 0.001;
-        const g_lb = measure * 0.00220462;
-
-        const l_mg = measure * 1000;
-        const l_cup = measure * 4.16667;
-        const l_floz = measure * 33.814;
-        const l_tbs = measure * 67.628;
-        const l_tsp = measure * 202.884;
-
         let entry = measure.target.value;
-   
-        try {
-            // switch case for different units based on state *********
-        } catch(err) {
-            console.error("err:", err)
-        }
+        console.log(entry)
+        return setUnits(entry)
     }
 
     return (
@@ -39,7 +48,7 @@ const Card = ({props}) => {
                             <div className="p-2">
                                 {/* name, stats */}
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100g </sub>
+                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / {props.grams_serving} {isUnits ?? props.units} </sub>
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
@@ -79,32 +88,31 @@ const Card = ({props}) => {
                                             <h3 className="text-2xl"> {props.food_name} </h3>
 
                                             <div className="join">
-                                                <input className="join-item input" type="text" onChange={convert}/>
-                                                <select className="join-item">
+                                                <input className="join-item input" type="number" onChange={calculate}/>
+                                                <select className="join-item" onChange={convert}>
                                                     <option> {props.units = "liter" ? "ml" : "g"} </option>
                                                     <option> {props.units = "liter" ? "l" : "g"} </option>
                                                     <option> {props.units = "liter" ? "tsp" : "g"} </option>
                                                     <option> {props.units = "liter" ? "tbsp" : "mg"} </option>
                                                     <option> {props.units = "liter" ? "cup" : "kg"} </option>
                                                     <option> {props.units = "liter" ? "fl oz" : "oz"} </option>
-                                                    <option> {props.units = "liter" ? "serving (xyz g)" : "serving (fill in)"} </option>
                                                 </select>                                                
                                             </div>
 
-                                            <div> Calories: {props?.calories} </div>
+                                            <div> Calories: {props.calories * isEntry}</div>
                                             <sub> Type: {props?.food_type} </sub>
                                             <div> Macros </div>
                                             <ul className="flex justify-around gap-1">
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-mint"> {props?.proteins ?? "?"}{isUnits ? isUnits : ""} </span>
+                                                    <span className="alt-font-2 text-2xl text-mint"> {(props.proteins * isEntry).toFixed(1)} % </span>
                                                     <p> Protein </p>
                                                 </li>
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-gum"> {props?.fats ?? "?"}{isUnits ? isUnits : ""} </span>
+                                                    <span className="alt-font-2 text-2xl text-gum"> {(props.fats * isEntry).toFixed(1)} % </span>
                                                     <p> Fat </p>
                                                 </li>
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-burnt"> {props?.carbs ?? "?"}{isUnits ? isUnits : ""} </span>
+                                                    <span className="alt-font-2 text-2xl text-burnt"> {(props.carbs * isEntry).toFixed(1)} % </span>
                                                     <p> Carbs </p>
                                                 </li>
                                             </ul>
