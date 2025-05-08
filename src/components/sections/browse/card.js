@@ -1,44 +1,62 @@
 // individual cards for food items
-import { useState } from "react";
+import { useState, useRef } from "react";
+import conversions from "../../functions/conversions";
 
+
+/*
+
+- 
+
+- capture units
+- capture quantities
+- do math using current unit and quantities
+
+*/
 const Card = ({props}) => {
 
-    // state for if conversions have been made
-    const [isEntry, setEntry] = useState(null)
-    const [isUnits, setUnits] = useState(null)
+    const [isEntry, setEntry] = useState(0);
+    const [isUnits, setUnits] = useState(props.units);
+    const [isList, setList] = useState(null);
+    const [isCalc, setCalc] = useState(null);
+ 
+    const unitSelect = useRef();
+
+    const liquids = ['l', 'ml', 'tsp', 'tbsp', 'cup', 'gal', 'fl oz', 'quart', 'pint'];
+    const solids = ['g', 'mg', 'oz', 'kg', 'lb'];
 
 
+    const list = (options) => {
+        const html = options.map(unit => {
+            return <option value={unit}>{unit}</option>
+        })
+        setList(html)
+    }
 
+    // map list
+    function echo() {
+        liquids.includes(props.units) 
+        ? list(liquids)
+        :list(solids)
+    }    
+    
     const calculate = (amount) => {
+        // user's number entry
         let entry = amount.target.value;
         let digit = Number(entry);
-
-        // based on a 2,000 calorie diet
-        // serving is how many grams?
-        const g_oz = digit * 0.035274;
-        const g_mg = digit * 1000;
-        const g_kg = digit * 0.001;
-        const g_lb = digit * 0.00220462;
-
-        // serving is how may liters?
-        const l_ml = digit * 1000;
-        const l_cup = digit * 4.16667;
-        const l_floz = digit * 33.814;
-        const l_tbs = digit * 67.628;
-        const l_tsp = digit * 202.884;
-
         setEntry(digit)
-        console.log("you entered ", isEntry)
     }
 
     const convert = (measure) => {
-        let entry = measure.target.value;
-        console.log(entry)
-        return setUnits(entry)
+        // convert units of measure
+        setUnits(measure.target.value)
+    }
+
+    const check = () => {
+        conversions(props.units, isEntry, isUnits)
     }
 
     return (
-            <div className="rounded-xl shadow overflow-hidden transition-all">
+            <div className="rounded-xl shadow overflow-hidden transition-all" onClick={echo}>
                 <div className="m-auto flex flex-col md:flex-row gap-8">           
                     <div className="text-center m-auto">
 
@@ -46,7 +64,6 @@ const Card = ({props}) => {
                             <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-full" />
 
                             <div className="p-2">
-                                {/* name, stats */}
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
                                 <sub className="zero-reset"> {props?.calories ?? "?"} cal. / {props.grams_serving} {isUnits ?? props.units} </sub>
                                 <div className="my-4">
@@ -85,17 +102,12 @@ const Card = ({props}) => {
                                             backdropFilter: "blur(12px)",
                                             WebkitBackdropFilter: "blur(8px)",
                                         }}>
-                                            <h3 className="text-2xl"> {props.food_name} </h3>
+                                            <h3 className="text-2xl mb-6"> {props.food_name}'s serving size is: {props.serving} </h3>
 
-                                            <div className="join">
+                                            <div className="join" onChange={check}>
                                                 <input className="join-item input" type="number" onChange={calculate}/>
-                                                <select className="join-item" onChange={convert}>
-                                                    <option> {props.units = "liter" ? "ml" : "g"} </option>
-                                                    <option> {props.units = "liter" ? "l" : "g"} </option>
-                                                    <option> {props.units = "liter" ? "tsp" : "g"} </option>
-                                                    <option> {props.units = "liter" ? "tbsp" : "mg"} </option>
-                                                    <option> {props.units = "liter" ? "cup" : "kg"} </option>
-                                                    <option> {props.units = "liter" ? "fl oz" : "oz"} </option>
+                                                <select ref={unitSelect} className="join-item" onChange={convert}>
+                                                    { isList && isList }
                                                 </select>                                                
                                             </div>
 
@@ -104,19 +116,20 @@ const Card = ({props}) => {
                                             <div> Macros </div>
                                             <ul className="flex justify-around gap-1">
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-mint"> {(props.proteins * isEntry).toFixed(1)} % </span>
+                                                    <span className="alt-font-2 text-2xl text-mint"> {isCalc ? isCalc : props.proteins} </span>
                                                     <p> Protein </p>
                                                 </li>
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-gum"> {(props.fats * isEntry).toFixed(1)} % </span>
+                                                    <span className="alt-font-2 text-2xl text-gum"> {props.fats} </span>
                                                     <p> Fat </p>
                                                 </li>
                                                 <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-burnt"> {(props.carbs * isEntry).toFixed(1)} % </span>
+                                                    <span className="alt-font-2 text-2xl text-burnt"> {(props.serving ? isEntry : isEntry).toFixed(2)} </span>
                                                     <p> Carbs </p>
                                                 </li>
                                             </ul>
-                                            <div> Micros </div>
+                                            {/* ==== coming soon ==== */}
+                                            {/* <div> Micros </div>
                                             <ul className="card-expanded-list">
                                                 <li>Sat. fats: <b>{props?.saturated_fats ?? "?"}</b> </li>
                                                 <li>Cholesterol: <b>{props?.cholesterol ?? "?"}</b> </li>
@@ -125,7 +138,7 @@ const Card = ({props}) => {
                                                 <li>Vitamin B12: <b>{props?.vitamin_B12 ?? "?"}</b></li>
                                                 <li>Vitamin C: <b>{props?.vitamin_C ?? "?"}</b></li>
                                                 <li>Vitamin D: <b>{props?.vitamin_D ?? "?"}</b></li>
-                                            </ul>
+                                            </ul> */}
                                         </div>
                                         <form method="dialog" className="modal-backdrop">
                                             <button>close</button>

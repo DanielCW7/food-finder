@@ -4,8 +4,6 @@ import Card from "./card";
 
 const Results = (search) => {
 
-    console.log(search)
-
     const [isResults, setResults] = useState([]);
     const [currentPage, setPage] = useState(1);
     const scrollRef = useRef(null);
@@ -33,7 +31,7 @@ const Results = (search) => {
     }
 
     useEffect(() => {
-        console.log(search)
+
         try {
             if(search === "") {
                 getAll()
