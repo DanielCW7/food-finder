@@ -16,7 +16,7 @@ const Browse = () => {
                 <div className="m-auto w-full max-w-xl">
                     {/* searchbar */}
                     <div>
-                        <h1 className="text-4xl text-white"> Browse </h1>
+                        <h1 className="text-4xl text-white font-black mb-4"> Browse </h1>
                         <p className="text-white"> Pick from a curated list of hundreds of foods.</p>
                         <div className="flex max-w-xl mt-6">
                             <input className="input w-full" placeholder="apples, carrots, grapes ..." onChange={(e) => setQuery(e.target.value)}/>
