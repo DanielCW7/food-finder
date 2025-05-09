@@ -3,10 +3,6 @@ import oranges from "../../images/oranges.webp"
 
 const QuickStats = () => {
 
-    const sampleSize = [1,1,1,1,1,1,1,1,1,1,1,1]
-    const [isData, setData] = useState(sampleSize);
-
-
     return (
         <section className="bg-base-200">
             {/* divider */}
@@ -14,10 +10,10 @@ const QuickStats = () => {
                 <path className="fill-base-100" d="M1079.5 134.151C694.764 -107.053 119.697 346.196 -0.000976562 -0.000274658L2906.06 -0.000274658L3683 -0.000274658C3264.3 -0.000274658 1464.23 375.355 1079.5 134.151Z" fill=""/>
             </svg>
 
-            <div className="m-auto max-w-4xl flex flex-col md:flex-row gap-8 p-8">
-                <div className="text-center m-auto">
-                    <h2 className="text-xl mb-6"> Food For Thought. </h2>
-                    <p> Get the nitty gritty details for any food, including both macro and micronutrients. </p>
+            <div className="m-auto max-w-3xl flex flex-col md:flex-row gap-8 p-8">
+                <div className="text-left m-auto">
+                    <h2 className="text-xl mb-4 font-black text-ocean"> Food For Thought. </h2>
+                    <p> Get the nitty gritty details for some of the most common foods, nothing too fancy. All it takes is a quick look, and you have all that you need! </p>
                 </div>            
                 <div className="text-center m-auto">
                     <div className="svg-container">
@@ -33,19 +29,19 @@ const QuickStats = () => {
                     </div>
 
                     <p className="textxl"> Oranges </p>
-                    <sub> calories </sub>
+                    <sub> 100g </sub>
                     <div className="my-4">
-                        <ul className="flex justify-around">
+                        <ul className="flex justify-around gap-4">
                             <li>
-                                <span className="alt-font-2 text-2xl text-mint"> 23g </span>
+                                <span className="alt-font-2 text-xl text-mint"> 0.3g </span>
                                 <p> Proteins </p>
                             </li>
                             <li>
-                                <span className="alt-font-2 text-2xl text-gum"> 10g </span>
+                                <span className="alt-font-2 text-xl text-gum"> 0.2g </span>
                                 <p> Fats </p>
                             </li>
                             <li>
-                                <span className="alt-font-2 text-2xl text-burnt"> 9g </span>
+                                <span className="alt-font-2 text-xl text-burnt"> 14g </span>
                                 <p> Carbs </p>
                             </li>
                         </ul>

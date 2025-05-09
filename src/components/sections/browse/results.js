@@ -23,8 +23,8 @@ const Results = (search) => {
 
     function getCertain(food) {
         const lowercase = food.toLowerCase()
-
-        setSearched(isResults.filter(e => e.food_name.includes(food)))
+        setPage(1)
+        setSearched(isResults.filter(e => e.food_name.includes(lowercase)))
         console.log(isSearched)
     }
 
@@ -52,22 +52,23 @@ const Results = (search) => {
     }
 
     return (
-        <section className="bg-base-100 flex flex-col" id="search_results">
+        <section className="bg-base-100 flex flex-col mb-12" id="search_results">
             <div className="p-4" ref={scrollRef}></div> 
             <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>
-                <sub> <div className={`badge ${(isSearched.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length}</div> results </sub>
+                <sub> <div className={`badge ${(isSearched.length > 0 ? isSearched.length : isResults.length) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length > 0 ? isSearched.length : isResults.length}</div> results </sub>
             </div>
         {
-            isSearched.length > 0 ?
+            isResults.length > 0 ?
             <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
-                {populate(isSearched)}                 
+                {populate(isSearched.length > 0 ? isSearched : isResults)}                 
             </div> :
             <div className="p-8 my-8">
                 <div className="">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10 m-auto">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 16.318A4.486 4.486 0 0 0 12.016 15a4.486 4.486 0 0 0-3.198 1.318M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                     </svg>
+
 
                     <h2 className="text-2xl text-center"> No Results...  </h2>
                     <p className="text-sm text-center"> try broadening your search. </p>
@@ -77,7 +78,7 @@ const Results = (search) => {
 
             <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>
-                <sub> <div className={`badge ${(isSearched.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length}</div> results </sub>
+                <sub> <div className={`badge ${(isSearched.length > 0 ? isSearched.length : isResults.length) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length > 0 ? isSearched.length : isResults.length}</div> results </sub>
             </div>
 
             <div className="m-auto join">
@@ -93,7 +94,7 @@ const Results = (search) => {
                     }}
                 />
                 <input 
-                    className={`join-item btn ${(isSearched.length / perPage) < (currentPage) && "btn-disabled"}`}
+                    className={`join-item btn ${((isSearched.length > 0 ? isSearched.length : isResults.length) / perPage) < (currentPage) && "btn-disabled"}`}
                     type="radio" 
                     name="options" 
                     aria-label={"Next"} 
