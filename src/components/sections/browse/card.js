@@ -5,7 +5,7 @@ import conversions from "../../functions/conversions";
 
 /*
 
-- 
+- base macros from db are based on 100g measurements
 
 - capture units
 - capture quantities
@@ -65,7 +65,7 @@ const Card = ({props}) => {
 
                             <div className="p-2">
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / {props.grams_serving} {isUnits ?? props.units} </sub>
+                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100 {isUnits ?? props.units} </sub>
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
@@ -84,17 +84,17 @@ const Card = ({props}) => {
                                 </div> 
 
                                 <div className="flex justify-center gap-2 p-2">
-                          
+{/*                           
                                     <button className="btn btn-secondary btn-sm btn-outline" onClick={() => document.getElementById(`food_card${props.food_name}`).showModal()}> 
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                                         </svg>
 
                                         Info 
-                                    </button> 
+                                    </button>  */}
 
                                     {/* expanded card info */}
-                                    <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
+                                    {/* <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
                                         <div className="modal-box shadow-2xl" style={{
                                             backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(${props.food_image})`,
                                             backgroundSize: "cover",
@@ -128,22 +128,14 @@ const Card = ({props}) => {
                                                     <p> Carbs </p>
                                                 </li>
                                             </ul>
-                                            {/* ==== coming soon ==== */}
-                                            {/* <div> Micros </div>
-                                            <ul className="card-expanded-list">
-                                                <li>Sat. fats: <b>{props?.saturated_fats ?? "?"}</b> </li>
-                                                <li>Cholesterol: <b>{props?.cholesterol ?? "?"}</b> </li>
-                                                <li>Fiber: <b>{props?.fiber ?? "?"}</b></li>
-                                                <li>Vitamin A: <b>{props?.vitamin_A ?? "?"}</b></li>
-                                                <li>Vitamin B12: <b>{props?.vitamin_B12 ?? "?"}</b></li>
-                                                <li>Vitamin C: <b>{props?.vitamin_C ?? "?"}</b></li>
-                                                <li>Vitamin D: <b>{props?.vitamin_D ?? "?"}</b></li>
-                                            </ul> */}
+
+                                          
+
                                         </div>
                                         <form method="dialog" className="modal-backdrop">
                                             <button>close</button>
                                         </form>
-                                    </dialog>                                
+                                    </dialog>                                 */}
                                 </div>
                             
 

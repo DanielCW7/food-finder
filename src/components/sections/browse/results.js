@@ -5,6 +5,7 @@ import Card from "./card";
 const Results = (search) => {
 
     const [isResults, setResults] = useState([]);
+    const [isSearched, setSearched] = useState([]);
     const [currentPage, setPage] = useState(1);
     const scrollRef = useRef(null);
 
@@ -21,19 +22,15 @@ const Results = (search) => {
     }
 
     function getCertain(food) {
+        const lowercase = food.toLowerCase()
 
-        fetch(`http://localhost:3000/food/${food}`)
-        .then(res => res.json())
-        .then(res => {
-            const arr = Array.from(res)
-            setResults(arr)
-        })    
+        setSearched(isResults.filter(e => e.food_name.includes(food)))
+        console.log(isSearched)
     }
 
     useEffect(() => {
-
         try {
-            if(search === "") {
+            if(search.query.length < 1) {
                 getAll()
             } else {
                 getCertain(search.query)  
@@ -42,6 +39,7 @@ const Results = (search) => {
             console.error(err)
         }
     }, [search])
+
 
     // scroll upward when a new page is requested
     const scrollTop = () => scrollRef.current && scrollRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -55,69 +53,15 @@ const Results = (search) => {
 
     return (
         <section className="bg-base-100 flex flex-col" id="search_results">
-            <div className="p-4" ref={scrollRef}>
-                <form className="flex flex-col justify-center">
-                
-                    <div className="p-4 flex flex-row gap-2 m-auto">
-                        <div className="flex flex-col">
-                            <label> Only show: </label>
-                            <select className="select select-sm select-primary w-full">
-                                <option disabled defaultValue> Food Type </option>
-                                <option value={null}> All foods </option>
-                                <option value="Fruits"> Fruits </option>
-                                <option value="Vegetables"> Vegetables </option>
-                                <option value="Meats"> Meats </option>
-                                <option value="Starches"> Starches </option>
-                                <option value="Nuts"> Nuts </option>
-                                <option value="Legumes"> Legumes </option>
-                            </select>                            
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label> Focusing on: </label>
-                            <select className="select select-sm select-primary w-full">
-                                <option disabled defaultValue> Nutrients </option>
-                                <option value={null}> All nutrients </option>
-                                <option value="Protein"> Protein </option>
-                                <option value="Fat"> Fat </option>
-                                <option value="Carbohydrate"> Carbohydrate </option>
-                                <option value="Calories"> Calories </option>
-                                <option value="Cholesterol"> Cholesterol </option>
-                                <option value="Fiber"> Fiber </option>
-                                <option value="A"> Vitamin A </option>
-                                <option value="B2"> Vitamin B2 </option>
-                                <option value="B6"> Vitamin B6 </option>
-                                <option value="B12"> Vitamin B12 </option>
-                                <option value="C"> Vitamin C </option>
-                                <option value="D"> Vitamin D </option>
-                                <option value="E"> Vitamin E </option>
-                                <option value="K"> Vitamin K </option>
-                            </select>                                
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label> Sort by: </label>
-                            <select className="select select-sm select-primary w-full">
-                                <option disabled defaultValue> Nutrients </option>
-                                <option value={null}> None </option>
-                                <option value="H2L"> High to low </option>
-                                <option value="L2H"> Low to High </option>
-                            </select>                            
-                        </div> 
-                                                    
-                    </div>
-
-                    <button className="btn btn-sm btn-wide m-auto"> Sort </button>                          
-                </form>
-            </div> 
+            <div className="p-4" ref={scrollRef}></div> 
             <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>
-                <sub> <div className={`badge ${(isResults.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isResults.length}</div> results </sub>
+                <sub> <div className={`badge ${(isSearched.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length}</div> results </sub>
             </div>
         {
-            isResults.length > 0 ?
+            isSearched.length > 0 ?
             <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
-                {populate(isResults)}                 
+                {populate(isSearched)}                 
             </div> :
             <div className="p-8 my-8">
                 <div className="">
@@ -133,7 +77,7 @@ const Results = (search) => {
 
             <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>
-                <sub> <div className={`badge ${(isResults.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isResults.length}</div> results </sub>
+                <sub> <div className={`badge ${(isSearched.length > 0) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length}</div> results </sub>
             </div>
 
             <div className="m-auto join">
@@ -149,7 +93,7 @@ const Results = (search) => {
                     }}
                 />
                 <input 
-                    className={`join-item btn ${(isResults.length / perPage) < (currentPage) && "btn-disabled"}`}
+                    className={`join-item btn ${(isSearched.length / perPage) < (currentPage) && "btn-disabled"}`}
                     type="radio" 
                     name="options" 
                     aria-label={"Next"} 

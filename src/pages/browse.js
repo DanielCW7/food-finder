@@ -7,13 +7,6 @@ const Browse = () => {
 
     const [isQuery, setQuery] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let search = e.target.elements[0].value;
-
-        setQuery(search);
-    }
-
     return (
         <>
             <Nav />
@@ -22,15 +15,13 @@ const Browse = () => {
                 {/* hero search */}
                 <div className="m-auto w-full max-w-xl">
                     {/* searchbar */}
-                    <form onSubmit={handleSubmit}>
+                    <div>
                         <h1 className="text-4xl text-white"> Browse </h1>
                         <p className="text-white"> Pick from a curated list of hundreds of foods.</p>
-                        {/* food slider? food picture switcher? */}
-                        <div className="form-control join join-horizontal flex max-w-xl mt-6">
-                            <input className="input join-item w-full" />
-                            <button type="submit" className="btn btn-primary join-item"> search </button>
+                        <div className="flex max-w-xl mt-6">
+                            <input className="input w-full" placeholder="apples, carrots, grapes ..." onChange={(e) => setQuery(e.target.value)}/>
                         </div>                        
-                    </form>
+                    </div>
 
                 </div>
             </section>
