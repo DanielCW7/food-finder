@@ -69,15 +69,15 @@ const Card = ({props}) => {
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-mint"> {props?.proteins ?? "?"} </span>
+                                            <span className="alt-font-2 text-2xl text-mint"> {props?.protein ?? "?"} </span>
                                             <p> Protein </p>
                                         </li>
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-gum"> {props?.fats ?? "?"} </span>
+                                            <span className="alt-font-2 text-2xl text-gum"> {props?.fat ?? "?"} </span>
                                             <p> Fat </p>
                                         </li>
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-burnt"> {props?.carbs ?? "?"} </span>
+                                            <span className="alt-font-2 text-2xl text-burnt"> {props?.carb ?? "?"} </span>
                                             <p> Carbs </p>
                                         </li>
                                     </ul>

@@ -13,7 +13,7 @@ const Results = (search) => {
     const adjusted = perPage * currentPage;
 
     function getAll() {
-        fetch("http://localhost:3000/food")
+        fetch("http://localhost:3000/browse")
         .then(res => res.json())
         .then(res => {
             const arr = Array.from(res)
@@ -23,17 +23,17 @@ const Results = (search) => {
 
     function getCertain(food) {
         const lowercase = food.toLowerCase()
+        const filtered = isResults.filter(e => e.food_name.includes(lowercase))
         setPage(1)
-        setSearched(isResults.filter(e => e.food_name.includes(lowercase)))
-        console.log(isSearched)
+        filtered.length > 0 ? setSearched(filtered) : setSearched([])
     }
 
     useEffect(() => {
         try {
-            if(search.query.length < 1) {
-                getAll()
-            } else {
+            if(search.query.length > 0) {
                 getCertain(search.query)  
+            } else {
+                getAll()  
             }
         } catch (err) {
             console.error(err)

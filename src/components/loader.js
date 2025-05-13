@@ -3,7 +3,6 @@
 const Loader = () => {
     return (
         <div className="loading loading-dots loading-lg">
-            loading ... 
         </div>
     )
 }

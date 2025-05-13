@@ -47,11 +47,12 @@ const Nav = () => {
     return (
         <nav>
             <div className="hidden py-4 px-8 md:flex w-full justify-between m-auto transition-all shadow-2xl bg-base-100">
-                <div></div>
-                <ul id="desktop_nav" className="flex gap-6 place-items-center">  
-                    <a href="/"><li> Home </li></a>
-                    <a href="/browse"><li> Browse </li></a>
-                </ul>
+                <div className="flex justify-end max-w-4xl w-full mx-auto">
+                    <ul id="desktop_nav" className="flex gap-8 place-items-center">  
+                        <a href="/"><li> Home </li></a>
+                        <a href="/browse"><li> Browse </li></a>
+                    </ul>
+                </div>
             </div>
 
             
@@ -74,22 +75,22 @@ const Nav = () => {
                 {/* menu options */}
                 <div>
                     <ul className="flex flex-col gap-4">
-                        <a href="/"><li className="text-center">
+                        <a href="/"><li className="text-left">
                             <div className="alt-font text-5xl">
-                                <span className="menu-opt menu-letter-down">H</span>
-                                <span className="menu-opt menu-letter-down">o</span>    
-                                <span className="menu-opt menu-letter-down">m</span>    
-                                <span className="menu-opt menu-letter-down">e</span>    
+                                <span className="menu-opt menu-letter-down font-black">H</span>
+                                <span className="menu-opt menu-letter-down font-black">o</span>    
+                                <span className="menu-opt menu-letter-down font-black">m</span>    
+                                <span className="menu-opt menu-letter-down font-black">e</span>    
                             </div>
                         </li></a>
-                        <a href="/browse"><li className="text-center">
+                        <a href="/browse"><li className="text-left">
                             <div className="alt-font text-5xl">
-                                <span className="menu-opt menu-letter-down">B</span>  
-                                <span className="menu-opt menu-letter-down">r</span>    
-                                <span className="menu-opt menu-letter-down">o</span>    
-                                <span className="menu-opt menu-letter-down">w</span>    
-                                <span className="menu-opt menu-letter-down">s</span>    
-                                <span className="menu-opt menu-letter-down">e</span>      
+                                <span className="menu-opt menu-letter-down font-black">B</span>  
+                                <span className="menu-opt menu-letter-down font-black">r</span>    
+                                <span className="menu-opt menu-letter-down font-black">o</span>    
+                                <span className="menu-opt menu-letter-down font-black">w</span>    
+                                <span className="menu-opt menu-letter-down font-black">s</span>    
+                                <span className="menu-opt menu-letter-down font-black">e</span>      
                             </div>
                         </li></a>
                     </ul>
