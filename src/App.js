@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/home';
 import Browse from './pages/browse';
-import { Routes, Route, HashRouter as Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 
