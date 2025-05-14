@@ -17,7 +17,7 @@
     "tailwindcss": "^3.2.7",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://danielcw7.github.io/food-finder",
+  "homepage": "food-finder",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
