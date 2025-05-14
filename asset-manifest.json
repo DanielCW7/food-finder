@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/food-finder/static/css/main.03658fc2.css",
-    "main.js": "/food-finder/static/js/main.28cad550.js",
+    "main.js": "/food-finder/static/js/main.a6ab5cc6.js",
     "static/js/453.ed3810f9.chunk.js": "/food-finder/static/js/453.ed3810f9.chunk.js",
     "static/media/oranges.webp": "/food-finder/static/media/oranges.2608455bcf561037c0e7.webp",
     "index.html": "/food-finder/index.html",
     "main.03658fc2.css.map": "/food-finder/static/css/main.03658fc2.css.map",
-    "main.28cad550.js.map": "/food-finder/static/js/main.28cad550.js.map",
+    "main.a6ab5cc6.js.map": "/food-finder/static/js/main.a6ab5cc6.js.map",
     "453.ed3810f9.chunk.js.map": "/food-finder/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03658fc2.css",
-    "static/js/main.28cad550.js"
+    "static/js/main.a6ab5cc6.js"
   ]
 }
