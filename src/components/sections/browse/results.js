@@ -13,7 +13,7 @@ const Results = (search) => {
     const adjusted = perPage * currentPage;
 
     function getAll() {
-        fetch(`${process.env.BASE_URL}/browse`)
+        fetch(`${process.env.BASE_URL}/api/food_stats`)
         .then(res => res.json())
         .then(res => {
             const arr = Array.from(res)
