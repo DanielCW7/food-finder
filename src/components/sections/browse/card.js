@@ -65,19 +65,19 @@ const Card = ({props}) => {
 
                             <div className="p-2">
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100 {isUnits ?? props.units} </sub>
+                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100 {props.units} </sub>
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-mint"> {props?.protein ?? "?"} </span>
+                                            <span className="font-black alt-font-2 text-xl text-mint"> {props?.protein ?? "?"} </span>
                                             <p> Protein </p>
                                         </li>
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-gum"> {props?.fat ?? "?"} </span>
+                                            <span className="font-black alt-font-2 text-xl text-gum"> {props?.fat ?? "?"} </span>
                                             <p> Fat </p>
                                         </li>
                                         <li>
-                                            <span className="alt-font-2 text-2xl text-burnt"> {props?.carb ?? "?"} </span>
+                                            <span className="font-black alt-font-2 text-xl text-burnt"> {props?.carb ?? "?"} </span>
                                             <p> Carbs </p>
                                         </li>
                                     </ul>
