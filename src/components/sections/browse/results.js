@@ -13,7 +13,7 @@ const Results = (search) => {
     const adjusted = perPage * currentPage;
 
     function getAll() {
-        fetch("/api/browse")
+        fetch("/api/")
         .then(res => res.json())
         .then(res => {
             const arr = Array.from(res)
