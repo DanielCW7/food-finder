@@ -14,7 +14,7 @@ app.use(express.json());
 const router = express.Router();
 
 // routes
-router.get('/', async (req, res) => {
+router.get('/browse', async (req, res) => {
     try {
         let { data, error } = await supabase.from('food_stats').select();
         if (error) throw error;
@@ -25,6 +25,6 @@ router.get('/', async (req, res) => {
     } 
 });
 
-app.use('/', router)
+app.use('/api', router)
 
 export default serverless(app);
