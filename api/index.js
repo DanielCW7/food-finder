@@ -14,7 +14,7 @@ app.use(express.json());
 const router = express.Router();
 
 // routes
-router.get('/browse', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         let { data, error } = await supabase.from('food_stats').select();
         if (error) throw error;
