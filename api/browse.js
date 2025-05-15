@@ -1,36 +1,27 @@
-import express, { json, Router } from 'express';
-import serverless from 'serverless-http';
-import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
+const express = require('express');
+const serverless = require('serverless-http');
+const { createClient } = require('@supabase/supabase-js');
+const dotenv = require('dotenv');
 
-// Only load .env in local development
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config();
-}
+dotenv.config(); // This works in both local and Vercel if envs are set
 
 const app = express();
-app.use(json());
+const router = express.Router();
 
-const router = Router();
+// Supabase client
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
-
-// GET route to fetch data
 router.get('/browse', async (req, res) => {
   try {
     const { data, error } = await supabase.from('food_stats').select();
     if (error) throw error;
     res.status(200).json(data);
   } catch (err) {
-    console.error('Fetch error:', err.message);
+    console.error('Supabase error:', err.message);
     res.status(500).json({ error: 'Failed to fetch food stats' });
   }
 });
 
 app.use('/api', router);
 
-export default serverless(app);
+module.exports = serverless(app);
