@@ -27,4 +27,4 @@ router.get('/browse', async (req, res) => {
 
 app.use('/', router)
 
-module.exports = serverless(app)
+export default serverless(app);
