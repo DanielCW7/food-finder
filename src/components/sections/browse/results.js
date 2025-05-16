@@ -14,8 +14,12 @@ const Results = (search) => {
 
     function getAll() {
         fetch("/api/browse")
-        .then(res => res.json())
         .then(res => {
+            console.log(res)
+            res.json()
+        })
+        .then(res => {
+            console.log(res)
             const arr = Array.from(res)
             setResults(arr)
         })    
