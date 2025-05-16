@@ -17,7 +17,7 @@ const Results = (search) => {
         try {
             const response = fetch("/api/browse")
         
-            if(!response.ok) {
+            if(response.status != 200) {
                 throw new Error(`HTTP error! status: ${response.status}`)
             }
 
@@ -29,7 +29,7 @@ const Results = (search) => {
         } catch(err) {
             console.error(err)
         } finally {
-            console.log("done fetching...")
+            console.log("done fetching")
         }
 
     }
