@@ -15,7 +15,7 @@ const Results = (search) => {
     async function getAll() {
 
         try {
-            const response = await fetch("/api/browse")
+            const response = await fetch('/api/browse')
         
             console.log(response)
             if(response.status != 200) {
