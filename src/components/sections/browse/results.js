@@ -17,24 +17,22 @@ const Results = (search) => {
 
         try {
             setLoading(true)
-            // dev fetch
+            // ================================================ dev fetch
             // fetch('http://localhost:3000/food')
             //    .then(res => res.json())
             //    .then(e => {setResults(e)})
 
-
-            // prod fetch
+            // ================================================ prod fetch
             const response = await fetch('/api/browse')
 
             console.log(response)
             if(response.status != 200) {
                 throw new Error(`HTTP error! status: ${response.status}`)
             }
-
             const res = await response.json()
             console.log("data received...", res.data)
+            setResults(res.data)   
 
-            setResults(res.data)            
         } catch(err) {
             console.error(err)
         } finally {

@@ -22,7 +22,7 @@ const Card = ({props}) => {
                 <div className="m-auto flex flex-col md:flex-row gap-8">           
                     <div className="text-center m-auto">
 
-                        <div className="max-w-sm sm:max-w-64">
+                        <div className="max-w-64">
                             <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-full" />
 
                             <div className="p-2">
