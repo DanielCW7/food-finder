@@ -25,7 +25,7 @@ const Results = (search) => {
             const data = await response.json()
             console.log("data received...", data)
 
-            const arr = Array.from(data)
+            const arr = data
             setResults(arr)            
         } catch(err) {
             console.error(err)
