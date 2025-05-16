@@ -12,17 +12,26 @@ const Results = (search) => {
     const perPage = 16
     const adjusted = perPage * currentPage;
 
-    function getAll() {
-        fetch("/api/browse")
-        .then(res => {
-            console.log(res)
-            res.json()
-        })
-        .then(res => {
-            console.log(res)
-            const arr = Array.from(res)
-            setResults(arr)
-        })    
+    async function getAll() {
+
+        try {
+            const response = fetch("/api/browse")
+        
+            if(!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`)
+            }
+
+            const data = await response.json()
+            console.log("data received...", data)
+
+            const arr = Array.from(data)
+            setResults(arr)            
+        } catch(err) {
+            console.error(err)
+        } finally {
+            console.log("done fetching...")
+        }
+
     }
 
     function getCertain(food) {
