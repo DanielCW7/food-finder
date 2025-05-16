@@ -23,7 +23,7 @@ const Results = (search) => {
             }
 
             const data = await response.json()
-            console.log("data received...", data)
+            console.log("data received...", Array.from(data))
 
             setResults(data)            
         } catch(err) {
