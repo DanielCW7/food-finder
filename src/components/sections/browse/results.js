@@ -22,8 +22,8 @@ const Results = (search) => {
                 throw new Error(`HTTP error! status: ${response.status}`)
             }
 
-            const data = await response.json()
-            console.log("data received...", Array.from(data))
+            const res = await response.json()
+            console.log("data received...", Array.from(res.data))
 
             setResults(data)            
         } catch(err) {
