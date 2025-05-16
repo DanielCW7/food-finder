@@ -9,7 +9,7 @@ const Results = (search) => {
     const [currentPage, setPage] = useState(1);
     const scrollRef = useRef(null);
 
-    const perPage = 16
+    const perPage = 20
     const adjusted = perPage * currentPage;
 
     async function getAll() {
