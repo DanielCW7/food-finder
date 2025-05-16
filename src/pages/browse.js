@@ -1,5 +1,5 @@
 import Nav from "../components/sections/nav";
-import Footer from "../components/footer";
+import Footer from "../components/sections/footer";
 import { useState } from "react";
 import Results from "../components/sections/browse/results";
 

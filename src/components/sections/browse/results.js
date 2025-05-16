@@ -1,12 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import Card from "./card";
-
+import Loader from "../../loader";
 
 const Results = (search) => {
 
     const [isResults, setResults] = useState([]);
     const [isSearched, setSearched] = useState([]);
     const [currentPage, setPage] = useState(1);
+    const [isLoading, setLoading] = useState(false);
     const scrollRef = useRef(null);
 
     const perPage = 20
@@ -15,27 +16,29 @@ const Results = (search) => {
     async function getAll() {
 
         try {
+            setLoading(true)
             // dev fetch
-            // fetch('http://localhost:3000/food')
-            //    .then(res => res.json())
-            //    .then(e => {setResults(e) })
+            fetch('http://localhost:3000/food')
+               .then(res => res.json())
+               .then(e => {setResults(e)})
 
 
             // prod fetch
-            const response = await fetch('/api/browse')
+            // const response = await fetch('/api/browse')
 
-            console.log(response)
-            if(response.status != 200) {
-                throw new Error(`HTTP error! status: ${response.status}`)
-            }
+            // console.log(response)
+            // if(response.status != 200) {
+            //     throw new Error(`HTTP error! status: ${response.status}`)
+            // }
 
-            const res = await response.json()
-            console.log("data received...", res.data)
+            // const res = await response.json()
+            // console.log("data received...", res.data)
 
-            setResults(res.data)            
+            // setResults(res.data)            
         } catch(err) {
             console.error(err)
         } finally {
+            setLoading(false)
             console.log("done fetching")
         }
 
@@ -78,11 +81,19 @@ const Results = (search) => {
                 <span> Page {currentPage}  </span>
                 <sub> <div className={`badge ${(isSearched.length > 0 ? isSearched.length : isResults.length) ? 'badge-success' : 'badge-error'} badge-outline`}>{isSearched.length > 0 ? isSearched.length : isResults.length}</div> results </sub>
             </div>
+
+        { isLoading ? <Loader /> : "" }
         {
             isResults.length > 0 ?
+
+            
             <div className="m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-max p-8">
                 {populate(isSearched.length > 0 ? isSearched : isResults)}                 
-            </div> :
+            </div>
+            
+            :
+
+
             <div className="p-8 my-8">
                 <div className="">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10 m-auto mb-4">
@@ -95,6 +106,8 @@ const Results = (search) => {
                 </div>  
             </div>                                       
         }
+
+
 
             <div className="m-auto mb-8 flex flex-row gap-2"> 
                 <span> Page {currentPage}  </span>

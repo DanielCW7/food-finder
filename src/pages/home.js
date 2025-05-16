@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../components/sections/nav";
-import Footer from "../components/footer";
+import Footer from "../components/sections/footer";
 import Hero from "../components/sections/hero";
 import About from "../components/sections/home/about";
 import QuickStats from "../components/sections/home/quickStats";

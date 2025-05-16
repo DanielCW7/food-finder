@@ -46,9 +46,9 @@ const Nav = () => {
 
     return (
         <nav>
-            <div className="hidden py-4 px-8 md:flex w-full justify-between m-auto transition-all shadow-2xl bg-base-100">
+            <div className="hidden py-2 px-8 md:flex w-full justify-between m-auto transition-all shadow-2xl bg-base-100" id="desktop_nav">
                 <div className="flex justify-end max-w-4xl w-full mx-auto">
-                    <ul id="desktop_nav" className="flex gap-8 place-items-center">  
+                    <ul className="flex gap-8 place-items-center">  
                         <a href="/"><li> Home </li></a>
                         <a href="/browse"><li> Browse </li></a>
                     </ul>

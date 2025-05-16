@@ -2,7 +2,7 @@
 
 const Loader = () => {
     return (
-        <div className="loading loading-dots loading-lg">
+        <div className="loading loading-dots loading-lg w-8">
         </div>
     )
 }

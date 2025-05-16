@@ -14,49 +14,11 @@ import conversions from "../../functions/conversions";
 */
 const Card = ({props}) => {
 
-    const [isEntry, setEntry] = useState(0);
-    const [isUnits, setUnits] = useState(props.units);
-    const [isList, setList] = useState(null);
-    const [isCalc, setCalc] = useState(null);
  
     const unitSelect = useRef();
 
-    const liquids = ['l', 'ml', 'tsp', 'tbsp', 'cup', 'gal', 'fl oz', 'quart', 'pint'];
-    const solids = ['g', 'mg', 'oz', 'kg', 'lb'];
-
-
-    const list = (options) => {
-        const html = options.map(unit => {
-            return <option value={unit}>{unit}</option>
-        })
-        setList(html)
-    }
-
-    // map list
-    function echo() {
-        liquids.includes(props.units) 
-        ? list(liquids)
-        :list(solids)
-    }    
-    
-    const calculate = (amount) => {
-        // user's number entry
-        let entry = amount.target.value;
-        let digit = Number(entry);
-        setEntry(digit)
-    }
-
-    const convert = (measure) => {
-        // convert units of measure
-        setUnits(measure.target.value)
-    }
-
-    const check = () => {
-        conversions(props.units, isEntry, isUnits)
-    }
-
     return (
-            <div className="rounded-xl shadow overflow-hidden transition-all" onClick={echo}>
+            <div className="rounded-xl shadow overflow-hidden transition-all">
                 <div className="m-auto flex flex-col md:flex-row gap-8">           
                     <div className="text-center m-auto">
 
@@ -65,7 +27,7 @@ const Card = ({props}) => {
 
                             <div className="p-2">
                                 <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / 100 {props.units} </sub>
+                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / {props.serving} {props.units} </sub>
                                 <div className="my-4">
                                     <ul className="flex justify-around">
                                         <li>
