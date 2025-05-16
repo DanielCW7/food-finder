@@ -17,6 +17,7 @@ const Results = (search) => {
         try {
             const response = fetch("/api/browse")
         
+            console.log(response)
             if(response.status != 200) {
                 throw new Error(`HTTP error! status: ${response.status}`)
             }
