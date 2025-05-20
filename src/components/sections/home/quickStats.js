@@ -28,20 +28,20 @@ const QuickStats = () => {
                         </svg>                       
                     </div>
 
-                    <p className="textxl"> Oranges </p>
+                    <p className="text-xl font-bold text-ocean"> Oranges </p>
                     <sub> 100g </sub>
                     <div className="my-4">
                         <ul className="flex justify-around gap-4">
                             <li>
-                                <span className="alt-font-2 text-xl text-mint"> 0.3g </span>
+                                <span className="alt-font-2 text-xl text-mint font-black"> 0.3g </span>
                                 <p> Proteins </p>
                             </li>
                             <li>
-                                <span className="alt-font-2 text-xl text-gum"> 0.2g </span>
+                                <span className="alt-font-2 text-xl text-gum font-black"> 0.2g </span>
                                 <p> Fats </p>
                             </li>
                             <li>
-                                <span className="alt-font-2 text-xl text-burnt"> 14g </span>
+                                <span className="alt-font-2 text-xl text-burnt font-black"> 14g </span>
                                 <p> Carbs </p>
                             </li>
                         </ul>
