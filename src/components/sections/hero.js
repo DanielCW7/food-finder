@@ -1,7 +1,7 @@
 
 const Hero = () => {
     return (
-        <header className="hero-gradient bg-cover min-h-50h flex flex-col">
+        <header className="hero-gradient bg-cover min-h-50h sm:min-h-96 flex flex-col">
 
             <div className="max-w-4xl m-auto p-8">
                 <h1 className="flex gap-2 justify-center text-4xl text-center pb-4 text-base-100 font-black place-items-center">

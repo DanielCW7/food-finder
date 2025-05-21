@@ -15,7 +15,7 @@ const Home = () => {
             <Hero />
             <About />
             <QuickStats />
-            {/* <Compare /> */}
+            <Compare />
             <Footer />
         </div>
     )
