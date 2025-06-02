@@ -18,20 +18,20 @@ const Results = (search) => {
         try {
             setLoading(true)
             // ================================================ dev fetch
-            // fetch('http://localhost:3000/food')
-            //    .then(res => res.json())
-            //    .then(e => {setResults(e)})
+            fetch('http://localhost:3000/food')
+               .then(res => res.json())
+               .then(e => {setResults(e)})
 
             // ================================================ prod fetch
-            const response = await fetch('/api/browse')
+            // const response = await fetch('/api/browse')
 
-            console.log(response)
-            if(response.status != 200) {
-                throw new Error(`HTTP error! status: ${response.status}`)
-            }
-            const res = await response.json()
-            console.log("data received...", res.data)
-            setResults(res.data)   
+            // console.log(response)
+            // if(response.status != 200) {
+            //     throw new Error(`HTTP error! status: ${response.status}`)
+            // }
+            // const res = await response.json()
+            // console.log("data received...", res.data)
+            // setResults(res.data)   
 
         } catch(err) {
             console.error(err)
@@ -85,7 +85,7 @@ const Results = (search) => {
             isResults.length > 0 ?
 
             
-            <div className="m-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-max p-8 gap-4">
+            <div className="m-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-max p-8">
                 {populate(isSearched.length > 0 ? isSearched : isResults)}                 
             </div>
             

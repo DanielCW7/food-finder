@@ -31,11 +31,11 @@ const Pie = (props: any) => {
         ],
     };    
     return (
-        <div className="">
+        <div className="w-32 md:w-full m-auto">
 
-            <div className="" style={{position: "relative"}}>
-                <Doughnut data={data} options={options} className="absolute" />
-                <img loading="lazy" alt="text" src={props.img} className="img-square rounded-full w-full h-full p-4" />
+            <div className="p-0" style={{ position: "relative" }}>
+                <Doughnut data={data} options={options} className="absolute" style={{ transform: "translateY(-5%)" }} />
+                <img loading="lazy" alt="text" src={props.img} className="img-square rounded-full w-full h-full p-2" />
             </div>
 
        </div>
