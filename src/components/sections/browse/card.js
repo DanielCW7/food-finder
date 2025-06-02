@@ -1,6 +1,7 @@
 // individual cards for food items
 import { useState, useRef } from "react";
 import conversions from "../../functions/conversions";
+import Pie from "../../pie";
 
 
 /*
@@ -14,100 +15,43 @@ import conversions from "../../functions/conversions";
 */
 const Card = ({props}) => {
 
+    let macros = [
+        props?.protein ?? 0,
+        props?.fat ?? 0,
+        props?.carb ?? 0,
+    ]
  
+    console.log(props)
     const unitSelect = useRef();
 
     return (
-            <div className="rounded-xl shadow overflow-hidden transition-all">
-                <div className="m-auto flex flex-col md:flex-row gap-8">           
-                    <div className="text-center m-auto">
+            <div className="rounded-xl transition-all w-full p-2">
+                <div className="flex flex-col gap-4 text-center">           
+                    <div className="max-w-48">
+                        {/* <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-48 h-48 rounded-full m-auto mb-6" /> */}
+                        <Pie img={props?.food_image ?? "?"} stats={macros} name={props?.food_name ?? "?"} />
+                    </div>  
 
-                        <div className="max-w-64">
-                            <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-full" />
+                    <div className="flex flex-col justify-center gap-2">
+                        <h3 className="text-lg font-bold text-ocean"> {props?.food_name ?? "?"} </h3>
+                        <sub> {props?.calories ?? "0"} cal. / {props?.serving ?? "0"} {props?.units ?? ""}. </sub>
 
-                            <div className="p-2">
-                                <p className="text-xl alt-font"> {props?.food_name ?? "?"} </p>
-                                <sub className="zero-reset"> {props?.calories ?? "?"} cal. / {props.serving} {props.units} </sub>
-                                <div className="my-4">
-                                    <ul className="flex justify-around">
-                                        <li>
-                                            <span className="font-black alt-font-2 text-xl text-mint"> {props?.protein ?? "?"} </span>
-                                            <p> Protein </p>
-                                        </li>
-                                        <li>
-                                            <span className="font-black alt-font-2 text-xl text-gum"> {props?.fat ?? "?"} </span>
-                                            <p> Fat </p>
-                                        </li>
-                                        <li>
-                                            <span className="font-black alt-font-2 text-xl text-burnt"> {props?.carb ?? "?"} </span>
-                                            <p> Carbs </p>
-                                        </li>
-                                    </ul>
-                                </div> 
-
-                                <div className="flex justify-center gap-2 p-2">
-{/*                           
-                                    <button className="btn btn-secondary btn-sm btn-outline" onClick={() => document.getElementById(`food_card${props.food_name}`).showModal()}> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                                        </svg>
-
-                                        Info 
-                                    </button>  */}
-
-                                    {/* expanded card info */}
-                                    {/* <dialog id={`food_card${props.food_name}`} className="modal modal-bottom md:modal-middle">
-                                        <div className="modal-box shadow-2xl" style={{
-                                            backgroundImage: `linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(${props.food_image})`,
-                                            backgroundSize: "cover",
-                                            backgroundPosition: "center",
-                                            backdropFilter: "blur(12px)",
-                                            WebkitBackdropFilter: "blur(8px)",
-                                        }}>
-                                            <h3 className="text-2xl mb-6"> {props.food_name}'s serving size is: {props.serving} </h3>
-
-                                            <div className="join" onChange={check}>
-                                                <input className="join-item input" type="number" onChange={calculate}/>
-                                                <select ref={unitSelect} className="join-item" onChange={convert}>
-                                                    { isList && isList }
-                                                </select>                                                
-                                            </div>
-
-                                            <div> Calories: {props.calories * isEntry}</div>
-                                            <sub> Type: {props?.food_type} </sub>
-                                            <div> Macros </div>
-                                            <ul className="flex justify-around gap-1">
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-mint"> {isCalc ? isCalc : props.proteins} </span>
-                                                    <p> Protein </p>
-                                                </li>
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-gum"> {props.fats} </span>
-                                                    <p> Fat </p>
-                                                </li>
-                                                <li className="bg-white flex-1 my-2 p-2 rounded-xl">
-                                                    <span className="alt-font-2 text-2xl text-burnt"> {(props.serving ? isEntry : isEntry).toFixed(2)} </span>
-                                                    <p> Carbs </p>
-                                                </li>
-                                            </ul>
-
-                                          
-
-                                        </div>
-                                        <form method="dialog" className="modal-backdrop">
-                                            <button>close</button>
-                                        </form>
-                                    </dialog>                                 */}
-                                </div>
-                            
-
-                            </div>
-                        
-                            <div>
-
-                        </div>
-                    </div>
-                    </div>                
+                        <div className="flex justify-center gap-4 mt-4">
+                            <span>
+                                <div className="font-black text-[#ff6384]"> {props?.protein ?? "?"} </div>
+                                <div className="text-sm text-[#ff6384]"> Protein </div>
+                            </span>  
+                            <span>
+                                <div className="font-black text-[#36a2eb]"> {props?.fat ?? "?"} </div>
+                                <div className="text-sm text-[#36a2eb]"> Fat </div>
+                            </span>
+                            <span>
+                                <div className="font-black text-[#2cd34a]"> {props?.carb ?? "?"} </div>
+                                <div className="text-sm text-[#2cd34a]"> Carb </div>
+                            </span>                  
+                        </div> 
+                    </div>      
+             
                 </div>
             </div>
     )

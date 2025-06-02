@@ -1,7 +1,9 @@
 import { useState } from "react";
-import oranges from "../../images/oranges.webp"
+import oranges from "../../images/oranges.webp";
+import Pie from "../../pie";
 
 const QuickStats = () => {
+    const data = [100,200,300]
 
     return (
         <section className="bg-base-200">
@@ -10,43 +12,40 @@ const QuickStats = () => {
                 <path className="fill-base-100" d="M1079.5 134.151C694.764 -107.053 119.697 346.196 -0.000976562 -0.000274658L2906.06 -0.000274658L3683 -0.000274658C3264.3 -0.000274658 1464.23 375.355 1079.5 134.151Z" fill=""/>
             </svg>
 
-            <div className="m-auto max-w-3xl flex flex-col md:flex-row gap-8 p-8">
+            <div className="m-auto max-w-3xl flex justify-between md:flex-row gap-8 p-8">
+           
+              
                 <div className="text-left m-auto">
                     <h2 className="text-xl mb-4 font-black text-ocean"> Food For Thought. </h2>
                     <p> Get the nitty gritty details for some of the most common foods, nothing too fancy. All it takes is a quick look, and you have all that you need! </p>
-                </div>            
-                <div className="text-center m-auto">
-                    <div className="svg-container">
-                        <svg className="max-w-64 mx-auto my-4" width="" height="" viewBox="0 0 720 472" fill="none">
-                            <defs>
-                                <clipPath id="myClipPath" className="">
-                                    <path d="M719.999 211C719.999 339.958 440.322 472 241.499 472C42.6765 472 -0.000976562 339.958 -0.000976562 211C-0.000976562 82.0415 239.177 0 437.999 0C636.822 0 719.999 82.0415 719.999 211Z" />
-                                </clipPath>
-                            </defs>
+                </div>   
 
-                            <image href={oranges} className="w-full h-auto" fill="none" clip-path="url(#myClipPath)" />
-                        </svg>                       
-                    </div>
+                <div className="flex flex-col gap-4 text-center">           
+                    <div className="flex-col flex justify-center text-center m-auto">
+                            {/* <img src={oranges} className="w-full h-auto img-square rounded-full h-32 w-32 mx-auto" /> */}
+                            <Pie img={oranges} stats={data} name="orange" calories={120} />
+                        </div>
+                        <div className="flex flex-col justify-center gap-2">
+                            <h3 className="text-lg font-bold text-ocean"> Orange </h3>
+                            <sub> 1000 cal. / 100g </sub>
 
-                    <p className="text-xl font-bold text-ocean"> Oranges </p>
-                    <sub> 100g </sub>
-                    <div className="my-4">
-                        <ul className="flex justify-around gap-4">
-                            <li>
-                                <span className="alt-font-2 text-xl text-mint font-black"> 0.3g </span>
-                                <p> Proteins </p>
-                            </li>
-                            <li>
-                                <span className="alt-font-2 text-xl text-gum font-black"> 0.2g </span>
-                                <p> Fats </p>
-                            </li>
-                            <li>
-                                <span className="alt-font-2 text-xl text-burnt font-black"> 14g </span>
-                                <p> Carbs </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>                
+                            <div className="flex justify-center gap-4 mt-4">
+                                <span>
+                                    <div className="font-black text-[#ff6384]"> 300 </div>
+                                    <div className="text-sm text-[#ff6384]"> Protein </div>
+                                </span>  
+                                <span>
+                                    <div className="font-black text-[#36a2eb]"> 200 </div>
+                                    <div className="text-sm text-[#36a2eb]"> Fat </div>
+                                </span>
+                                <span>
+                                    <div className="font-black text-[#2cd34a']"> 100 </div>
+                                    <div className="text-sm text-[#2cd34a']"> Carb </div>
+                                </span>                  
+                            </div> 
+                        </div>                      
+                </div>          
+              
             </div>
  
         </section>
