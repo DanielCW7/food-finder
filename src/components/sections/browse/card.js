@@ -25,7 +25,7 @@ const Card = ({props}) => {
     const unitSelect = useRef();
 
     return (
-            <div className="rounded-xl transition-all w-full p-2">
+            <div className="rounded-xl transition-all w-full p-2 bg-base-200">
                 <div className="flex flex-col gap-4 text-center">           
                     <div className="max-w-48">
                         {/* <img lazy="true" src={props?.food_image ?? "?"} className="img-reset w-48 h-48 rounded-full m-auto mb-6" /> */}

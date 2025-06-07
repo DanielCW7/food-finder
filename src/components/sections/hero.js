@@ -1,7 +1,7 @@
 
 const Hero = () => {
     return (
-        <header className="hero-gradient bg-cover min-h-half pt-32 pt-16 flex flex-col">
+        <header className="hero-gradient bg-cover min-h-half pt-32 flex flex-col">
 
             <div className="max-w-4xl m-auto p-8">
                 <h1 className="flex gap-2 justify-center text-4xl text-center pb-4 text-base-100 font-black place-items-center">
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
 
             {/* divider */}
-            <svg className="" xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 3683 176" fill="none">
+            <svg className="mt-16" xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 3683 176" fill="none">
                 <path className="fill-base-100" d="M2218.76 65.7453C2603.5 261.342 3563.3 -101.738 3683 179L776.941 179L0 179C418.696 179 1834.03 -129.851 2218.76 65.7453Z" fill="" />
             </svg>
             

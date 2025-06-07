@@ -3,13 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-
-
 const options = {
   responsive: true,
   cutout: "80%",
 };
 
+// pie chart with an image in the middle
 const Pie = (props: any) => {
 
 
@@ -30,6 +29,7 @@ const Pie = (props: any) => {
             
         ],
     };    
+
     return (
         <div className="w-32 md:w-full m-auto">
 

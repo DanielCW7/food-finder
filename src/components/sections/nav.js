@@ -51,6 +51,7 @@ const Nav = () => {
                     <ul className="flex gap-8 place-items-center">  
                         <a href="/"><li> Home </li></a>
                         <a href="/browse"><li> Browse </li></a>
+                        <a href="/compare"><li> Compare </li></a>
                     </ul>
                 </div>
             </div>

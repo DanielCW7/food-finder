@@ -13,8 +13,6 @@ const QuickStats = () => {
             </svg>
 
             <div className="m-auto max-w-3xl flex justify-between md:flex-row gap-8 p-8">
-           
-              
                 <div className="text-left m-auto">
                     <h2 className="text-xl mb-4 font-black text-ocean"> Food For Thought. </h2>
                     <p> Get the nitty gritty details for some of the most common foods, nothing too fancy. All it takes is a quick look, and you have all that you need! </p>

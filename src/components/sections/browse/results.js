@@ -85,7 +85,7 @@ const Results = (search) => {
             isResults.length > 0 ?
 
             
-            <div className="m-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-max p-8">
+            <div className="m-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 w-max p-6 gap-2">
                 {populate(isSearched.length > 0 ? isSearched : isResults)}                 
             </div>
             
