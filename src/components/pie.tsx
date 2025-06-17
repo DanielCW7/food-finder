@@ -3,10 +3,14 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-const options = {
-  responsive: true,
-  cutout: "80%",
-};
+    const options = {
+        responsive: true,
+        cutout: "80%",
+        borderWidth: 2,
+        borderRadius: 1000,
+        borderColor: "#fff",
+        offset: 5
+    };
 
 // pie chart with an image in the middle
 const Pie = (props: any) => {
@@ -31,11 +35,11 @@ const Pie = (props: any) => {
     };    
 
     return (
-        <div className="w-32 md:w-full m-auto">
+        <div className="md:w-full m-auto">
 
             <div className="p-0" style={{ position: "relative" }}>
-                <Doughnut data={data} options={options} className="absolute" style={{ transform: "translateY(-5%)" }} />
-                <img loading="lazy" alt="text" src={props.img} className="img-square rounded-full w-full h-full p-2" />
+                <Doughnut data={data} options={options} className="absolute" style={{ transform: "translateY(-3%)" }} />
+                <img loading="lazy" alt="text" src={props.img} className="img-square rounded-full w-full h-full" />
             </div>
 
        </div>

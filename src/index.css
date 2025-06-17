@@ -88,3 +88,7 @@ code {
   transform: translateY(12px);
   transition-delay: 0s;
 }
+
+.pacifico {
+  font-family: 'pacifico';
+}
